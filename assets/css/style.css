@@ -1,0 +1,204 @@
+/*=== abstracts css start === */
+@font-face {
+  font-family: "MuseoSans-thin";
+  src: url(../fonts/MuseoSans-100.otf);
+}
+@font-face {
+  font-family: "MuseoSans-regular";
+  src: url(../fonts/MuseoSans-300.otf);
+}
+@font-face {
+  font-family: "MuseoSans-medium";
+  src: url(../fonts/MuseoSans-500.otf);
+}
+@font-face {
+  font-family: "MuseoSans-bold";
+  src: url(../fonts/MuseoSans-700.otf);
+}
+@font-face {
+  font-family: "MuseoSans-black";
+  src: url(../fonts/MuseoSans-900.ttf);
+}
+/*===// end of abstracts css === */
+/*=== base css start === */
+* {
+  margin: 0;
+  padding: 0;
+  outline: none;
+  box-sizing: border-box;
+}
+
+::after, ::before {
+  box-sizing: border-box;
+}
+
+h1, h2, h3, h4, h5, h6, ol, ul, p, address, strong, i {
+  margin-top: 0px;
+  margin-bottom: 0px;
+}
+
+ul, li {
+  list-style: none;
+}
+
+a, a:hover {
+  text-decoration: none;
+}
+
+body {
+  font-family: "MuseoSans-regular";
+  font-size: 15px;
+  color: #545454;
+}
+
+.text-purple {
+  color: #F5145D;
+}
+
+.bg-purple {
+  background-color: #F5145D;
+}
+
+.bg-lumber {
+  background-color: #FFE1D5;
+}
+
+@media (min-width: 992px) {
+  .container {
+    max-width: 800px;
+  }
+}
+
+.line-height-0 {
+  line-height: 0;
+}
+
+/*===// end of base css === */
+/*=== components css start === */
+#multi-step-form .section-heading .section-title {
+  font-family: "MuseoSans-medium";
+}
+#multi-step-form .section-heading .steps-number {
+  font-family: "MuseoSans-black";
+  font-size: 90px;
+  font-weight: bolder;
+  margin-left: -40px;
+}
+#multi-step-form .section-heading.border-bottom {
+  border-bottom: 2px solid #F5145D !important;
+}
+#multi-step-form .profile-pic {
+  background-color: #fff;
+  padding: 10px;
+  text-align: center;
+  display: block;
+  max-width: 300px;
+  border-top-left-radius: 15px;
+  border-bottom-right-radius: 15px;
+  cursor: pointer;
+}
+#multi-step-form label {
+  font-family: "MuseoSans-regular";
+  color: #545454;
+}
+#multi-step-form .top-label {
+  font-family: "MuseoSans-bold";
+  color: #F5145D;
+}
+#multi-step-form .form-control {
+  background-color: transparent;
+  border: none;
+  border-bottom: 1px solid #545454;
+  border-radius: 0px;
+  padding-left: 0px;
+  padding-bottom: 0px;
+}
+#multi-step-form .form-control:focus {
+  box-shadow: none;
+}
+#multi-step-form .form-control::-moz-placeholder {
+  color: #C6C6C6;
+}
+#multi-step-form .form-control::placeholder {
+  color: #C6C6C6;
+}
+#multi-step-form .form-control.colored {
+  color: #fff;
+  border-bottom: 1px solid #fff;
+}
+#multi-step-form .form-control.colored::-webkit-calendar-picker-indicator {
+  filter: invert(1);
+}
+#multi-step-form .form-control.colored::-moz-placeholder {
+  color: #FFBFB4;
+}
+#multi-step-form .form-control.colored::placeholder {
+  color: #FFBFB4;
+}
+#multi-step-form .form-control.empty {
+  color: #FFBFB4;
+}
+#multi-step-form input[type=date]:invalid::-webkit-datetime-edit {
+  color: #545454;
+}
+#multi-step-form .form-select {
+  background-color: transparent;
+  border: none;
+  border-bottom: 1px solid #545454;
+  border-radius: 0px;
+  padding-left: 0px;
+  color: #545454;
+}
+#multi-step-form .form-select:focus {
+  box-shadow: none;
+}
+#multi-step-form .form-select:invalid {
+  color: #C6C6C6;
+}
+#multi-step-form .form-select [disabled] {
+  color: #C6C6C6;
+}
+#multi-step-form .form-select option {
+  background-color: white;
+}
+#multi-step-form .form-select.colored {
+  color: #fff;
+  border-color: #fff;
+  background-image: none;
+  -webkit-appearance: auto;
+     -moz-appearance: auto;
+          appearance: auto;
+}
+#multi-step-form .form-select.colored:invalid {
+  color: #FFBFB4;
+}
+#multi-step-form .form-select.colored [disabled] {
+  color: #FFBFB4;
+}
+#multi-step-form .form-select.colored option {
+  background-color: #F5145D;
+}
+#multi-step-form .form-check-input {
+  border-color: #F5145D;
+  border-width: 2px;
+}
+#multi-step-form .form-check-input:checked {
+  background-color: #F5145D;
+  border-color: #F5145D;
+}
+#multi-step-form .form-check-input.colored {
+  border-color: #fff;
+  background-color: #F5145D;
+}
+#multi-step-form .form-check-input.colored:checked {
+  border-color: #fff;
+}
+#multi-step-form .personal {
+  background: url(../images/form/personal-bg.png) no-repeat center top/cover;
+}
+
+/*===// end of components css === */
+/*=== layout css start === */
+/*===// end of layout css === */
+/*=== pages start === */
+/*===// end of pages  === */

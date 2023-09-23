@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>multi-step-form</title>
+    <link
+      rel="shortcut icon"
+      href="assets/images/logo.png"
+      type="image/x-icon"
+    />
+    <link rel="stylesheet" href="assets/vendor/fontawesome/css/all.min.css" />
+    <link
+      rel="stylesheet"
+      href="assets/vendor/bootstrap/css/bootstrap.min.css"
+    />
+    <link rel="stylesheet" href="assets/css/style.css" />
+  </head>
+  <body>
+    <!-- === header section start === -->
+    <header></header>
+    <!-- ===//end of header section === -->
+
+    <!-- === form section start === -->
+    <section class="steps-form">
+      <div class="form-wrapper">
+        <form id="multi-step-form">
+          <!-- Step 1 -->
+          <div class="step" data-step="1">
+            <div class="personal">
+              <div class="container">
+                <div class="section-heading d-flex align-items-center justify-content-end">
+                  <h2 class="section-title">PERSONAL</h2>
+                  <span class="steps-number text-purple opacity-25">01</span>
+                </div>
+                <div class="row g-5 py-5">
+                  <div class="col-md-6">
+                    <div class="row flex-column gy-4">
+                      <div class="col-12">
+                        <label class="text-center profile-pic">
+                          <img
+                            src="assets/images/form/profile-pic.png"
+                            alt="profile-pic"
+                            class="img-fluid"
+                          />
+                          <input type="file" class="d-none" />
+                        </label>
+                      </div>
+                      <div class="col-12">
+                        <div class="d-flex">
+                          <div class="flex-shrink-0 me-2">
+                            <img  src="assets/images/form/en.png" alt="en" class="img-fluid" />
+                          </div>
+                          <div>
+                            <label class="top-label text-white my-2">Do you speak English?</label>
+                            <br>
+                            <div class="form-check form-check-inline">
+                              <input class="form-check-input colored" name="speak-english" type="radio">
+                              <label class="form-check-label text-white">No</label>
+                            </div>
+                            <div class="form-check form-check-inline">
+                              <input class="form-check-input colored" name="speak-english" type="radio">
+                              <label class="form-check-label text-white">Fluent</label>
+                            </div>
+                            <div class="form-check form-check-inline">
+                              <input class="form-check-input colored" name="speak-english" type="radio">
+                              <label class="form-check-label text-white">Studying</label>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="col-12">
+                        <div class="d-flex">
+                          <div class="flex-shrink-0 me-2">
+                            <img  src="assets/images/form/question-mark.png" alt="icon" class="img-fluid" />
+                          </div>
+                          <div>
+                            <label class="top-label text-white my-2">Did you know The Florida Lounge?</label>
+                            <br>
+                            <div class="form-check form-check-inline">
+                              <input class="form-check-input colored" name="florida-lounge" type="radio">
+                              <label class="form-check-label text-white">Yes</label>
+                            </div>
+                            <div class="form-check form-check-inline">
+                              <input class="form-check-input colored" name="florida-lounge" type="radio">
+                              <label class="form-check-label text-white">No</label>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-md-6">
+                    <div class="row gy-4">
+                      <div class="col-12">
+                        <label class="top-label text-white text-uppercase">Name</label>
+                        <input type="text" class="form-control colored mb-2" placeholder="Enter Your Name">
+                      </div>
+                      <div class="col-12">
+                        <label class="top-label text-white text-uppercase">Last Name</label>
+                        <input type="text" class="form-control colored mb-2" placeholder="Enter Your Last Name">
+                      </div>
+                      <div class="col-12">
+                        <label class="top-label text-white text-uppercase">Birth</label>
+                        <input type="date" class="form-control colored mb-2 empty" id="date" placeholder="mm/dd/year">
+                      </div>
+                      <div class="col-12">
+                        <label class="top-label text-white text-uppercase">Status</label>
+                        <select class="form-select colored mb-2" required>
+                          <option value="" disabled selected>Open this select menu</option>
+                          <option value="1">One</option>
+                          <option value="2">Two</option>
+                          <option value="3">Three</option>
+                        </select>
+                      </div>
+                      <div class="col-12">
+                        <label class="top-label text-white text-uppercase">City</label>
+                        <select class="form-select colored" required>
+                          <option value="" disabled selected>Enter Your Current Location</option>
+                          <option value="1">One</option>
+                          <option value="2">Two</option>
+                          <option value="3">Three</option>
+                        </select>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+           </div>
+           <div class="career pt-4 pb-5">
+            <div class="container pt-2">
+              <div class="section-heading d-flex align-items-baseline border-bottom mb-5 px-4">
+                <div class="flex-shrink-0">
+                  <img src="assets/images/form/briefcase.png" alt="icon" class="img-fluid align-bottom">
+                </div>
+                <h2 class="section-title line-height-0">CAREER</h2>
+                <span class="steps-number text-purple opacity-25 line-height-0">02</span>
+              </div>
+              <div class="row g-5 px-4">
+                <div class="col-md-6">
+                  <div class="d-flex align-items-center">
+                    <div class="flex-shrink-0 me-2">
+                      <img src="assets/images/form/company.png" alt="icon" class="img-fluid">
+                    </div>
+                    <div class="flex-grow-1">
+                      <label class="top-label">COMPANY</label>
+                      <input type="text" class="form-control" placeholder="Enter Your Currnt Company">
+                    </div>
+                  </div>
+                  <div class="bg-lumber mt-2 p-3 rounded-4">
+                    <label class="top-label mb-2" style="color: #545454">Company Type</label>
+                    <br>
+                    <div class="form-check form-check-inline">
+                      <input class="form-check-input" name="company-type" type="radio">
+                      <label class="form-check-label">Public</label>
+                    </div>
+                    <div class="form-check form-check-inline">
+                      <input class="form-check-input" name="company-type" type="radio">
+                      <label class="form-check-label">Private</label>
+                    </div>
+                    <div class="form-check form-check-inline">
+                      <input class="form-check-input" name="company-type" type="radio">
+                      <label class="form-check-label">Third Sector</label>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-md-6">
+                  <div class="row flex-column gy-4">
+                    <div class="col-12">
+                      <div class="d-flex align-items-center">
+                        <div class="flex-shrink-0 me-2">
+                          <img src="assets/images/form/line-of-business.png" alt="icon" class="img-fluid">
+                        </div>
+                        <div class="flex-grow-1">
+                          <label class="top-label">LINE OF BUSINESS</label>
+                          <input type="text" class="form-control mb-2" placeholder="Company's Line of Business">
+                        </div>
+                      </div>
+                    </div>
+                    <div class="col-12">
+                      <div class="d-flex align-items-center">
+                        <div class="flex-shrink-0 me-2">
+                          <img src="assets/images/form/position.png" alt="icon" class="img-fluid">
+                        </div>
+                        <div class="flex-grow-1">
+                          <label class="top-label">POSITION</label>
+                          <input type="text" class="form-control mb-2" placeholder="Enter Your Position">
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+           </div>
+           <div class="family">
+            <div class="container">
+              <div class="section-heading d-flex align-items-baseline justify-content-end border-bottom mb-5 px-4">
+                <div class="flex-shrink-0">
+                  <img src="assets/images/form/family.png" alt="icon" class="img-fluid align-bottom">
+                </div>
+                <h2 class="section-title line-height-0">FAMILY</h2>
+                <span class="steps-number text-purple opacity-25 line-height-0">03</span>
+              </div>
+            </div>
+           </div>
+          </div>
+
+          <!-- <h2>Step 1</h2>
+          <label for="name">Name:</label>
+          <input type="text" id="name" name="name" required />
+          <span class="error" id="name-error"></span>
+          <button class="next-step">Next</button> -->
+
+          <!-- Step 2 -->
+          <div class="step" data-step="2">
+            <h2>Step 2</h2>
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" required />
+            <span class="error" id="email-error"></span>
+            <!-- Add other fields for Step 2 -->
+            <button class="prev-step">Previous</button>
+            <button class="next-step">Next</button>
+          </div>
+
+          <!-- Step 3 -->
+          <div class="step" data-step="3">
+            <h2>Step 3</h2>
+            <!-- Add fields for Step 3 -->
+            <input type="date" id="date-of-birth" required />
+            <span class="error" id="date-of-birth-error"></span>
+            <button class="prev-step">Previous</button>
+            <button type="submit">Submit</button>
+          </div>
+        </form>
+      </div>
+    </section>
+    <!-- ===//end of form section === -->
+
+    <!-- === footer section start === -->
+    <footer></footer>
+    <!-- ===//end of footer section === -->
+
+    <script src="assets/vendor/bootstrap/js/popper.js"></script>
+    <script src="assets/vendor/bootstrap/js/bootstrap.min.js"></script>
+    <script src="assets/js/custom.js"></script>
+  </body>
+</html>

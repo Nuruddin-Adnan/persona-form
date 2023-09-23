@@ -1,0 +1,143 @@
+#multi-step-form {
+    .section-heading {
+        .section-title {
+            font-family: 'MuseoSans-medium';
+        }
+        .steps-number {
+            font-family: 'MuseoSans-black';
+            font-size: 90px;
+            font-weight: bolder;
+            margin-left: -40px ;
+        }
+
+        &.border-bottom {
+            border-bottom: 2px solid #F5145D !important;
+        }
+    }
+
+    .profile-pic {
+        background-color: #fff;
+        padding: 10px;
+        text-align: center;
+        display: block;
+        max-width: 300px;
+        border-top-left-radius: 15px;
+        border-bottom-right-radius: 15px;
+        cursor: pointer;
+    }
+    label {
+        font-family: 'MuseoSans-regular';
+        color: #545454;
+    }
+
+    .top-label {
+        font-family: 'MuseoSans-bold';
+        color: #F5145D;
+    }
+
+   
+    .form-control {
+        background-color: transparent;
+        border: none;
+        border-bottom: 1px solid #545454;
+        border-radius: 0px;
+        padding-left: 0px;
+        padding-bottom: 0px;
+
+        &:focus {
+            box-shadow: none;
+        }
+
+        &::placeholder {
+            color: #C6C6C6;
+        }
+        
+        &.colored {
+            color: #fff;
+            border-bottom: 1px solid #fff;
+            &::-webkit-calendar-picker-indicator {
+                filter: invert(1);
+            }
+            &::placeholder {
+                color: #FFBFB4;
+            }
+        }
+
+        &.empty {
+            color: #FFBFB4;
+        }
+    }
+
+
+    input[type=date]:invalid::-webkit-datetime-edit {
+        color: #545454;
+    }
+
+    .form-select{
+        background-color: transparent;
+        border: none;
+        border-bottom: 1px solid #545454;
+        border-radius: 0px;
+        padding-left: 0px;
+        color: #545454;
+
+        &:focus {
+            box-shadow: none;
+        }
+
+        &:invalid {
+            color: #C6C6C6;
+        }
+          
+        [disabled] {
+            color: #C6C6C6;
+        }
+
+        option {
+            background-color: white;
+        }
+
+
+        &.colored {
+            color: #fff;
+            border-color: #fff;
+            background-image: none;
+            appearance: auto;
+
+            &:invalid {
+                color: #FFBFB4;
+            }
+              
+            [disabled] {
+                color: #FFBFB4;
+            }
+            
+            option {
+                background-color: #F5145D;
+            }
+        }
+    }
+
+
+    .form-check-input {
+        border-color: #F5145D;
+        border-width: 2px;
+
+        &:checked {
+            background-color: #F5145D;
+            border-color: #F5145D;
+        }
+
+        &.colored {
+            border-color: #fff;
+            background-color: #F5145D;
+            &:checked {
+                border-color: #fff;
+            }
+        }
+    }
+
+    .personal {
+        background: url(../images/form/personal-bg.png) no-repeat center top/cover;
+    }
+}
