@@ -73,6 +73,12 @@ body {
   line-height: 0;
 }
 
+@media (min-width: 992px) {
+  .text-lg-nowrap {
+    white-space: nowrap;
+  }
+}
+
 /*===// end of base css === */
 /*=== components css start === */
 .btn-purple {
@@ -98,11 +104,21 @@ body {
 #multi-step-form .section-heading .section-title {
   font-family: "MuseoSans-medium";
 }
+@media (max-width: 767px) {
+  #multi-step-form .section-heading .section-title {
+    font-size: 20px;
+  }
+}
 #multi-step-form .section-heading .steps-number {
   font-family: "MuseoSans-black";
   font-size: 90px;
   font-weight: bolder;
   margin-left: -40px;
+}
+@media (max-width: 767px) {
+  #multi-step-form .section-heading .steps-number {
+    font-size: 60px;
+  }
 }
 #multi-step-form .section-heading.border-bottom {
   border-bottom: 2px solid #F5145D !important;

@@ -18,3 +18,9 @@
     line-height: 0;
 }
 
+.text-lg-nowrap {
+    @media (min-width: 992px) {
+        white-space: nowrap;
+    }
+}
+

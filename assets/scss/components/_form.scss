@@ -2,12 +2,20 @@
     .section-heading {
         .section-title {
             font-family: 'MuseoSans-medium';
+
+            @media (max-width: 767px) {
+                font-size: 20px;
+            }
         }
         .steps-number {
             font-family: 'MuseoSans-black';
             font-size: 90px;
             font-weight: bolder;
             margin-left: -40px ;
+
+            @media (max-width: 767px) {
+                font-size: 60px;
+            }
         }
 
         &.border-bottom {
