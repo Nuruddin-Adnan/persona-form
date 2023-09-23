@@ -1,13 +1,47 @@
 document.addEventListener("DOMContentLoaded", function () {
 
+  // date field color change
   const dateInput = document.getElementById('date');
+  const dateInput2 = document.getElementById('date2');
   dateInput.onchange = function() {
     if (dateInput.value === '') {
         dateInput.classList.add("empty");
     } else {
         dateInput.classList.remove("empty");
     }
-}
+  }
+  dateInput2.onchange = function() {
+      if (dateInput2.value === '') {
+          dateInput2.classList.add("empty-gray");
+      } else {
+          dateInput2.classList.remove("empty-gray");
+      }
+  }
+
+  // Get references to the input and image elements
+  const fileInput = document.getElementById("fileInput");
+  const uploadedImage = document.getElementById("uploadedImage");
+
+  // Add an event listener to the file input
+  fileInput.addEventListener("change", function () {
+    const file = fileInput.files[0];
+
+    if (file) {
+        // Create a FileReader to read the selected file
+        const reader = new FileReader();
+
+        // Set up an event listener for when the FileReader has loaded the file
+        reader.onload = function (e) {
+            // Set the source of the image element to the data URL
+            uploadedImage.src = e.target.result;
+        };
+
+        // Read the file as a data URL (this will trigger the onload event)
+        reader.readAsDataURL(file);
+    }
+  });
+
+
 
   const form = document.getElementById("multi-step-form");
   const steps = Array.from(form.querySelectorAll(".step"));
@@ -31,6 +65,7 @@ document.addEventListener("DOMContentLoaded", function () {
   nextButtons.forEach((button) => {
     button.addEventListener("click", function (e) {
       e.preventDefault();
+      window.scrollTo({top: 0})
       if (validateStep(currentStep)) {
         currentStep++;
         showStep(currentStep);
@@ -41,6 +76,7 @@ document.addEventListener("DOMContentLoaded", function () {
   prevButtons.forEach((button) => {
     button.addEventListener("click", function (e) {
       e.preventDefault();
+      window.scrollTo({top: 0})
       currentStep--;
       showStep(currentStep);
     });

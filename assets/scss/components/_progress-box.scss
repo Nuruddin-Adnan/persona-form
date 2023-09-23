@@ -1,0 +1,26 @@
+
+.progress-box {
+    .text {
+        bottom: 100%;
+        color: #fff;
+        font-family: 'MuseoSans-regular';
+
+        span.active {
+            color: #F5145D;
+        }
+    }
+    
+    .dot {
+        width: 15px;
+        height: 15px;
+        display: block;
+        border-radius: 50%;
+        border: 1px solid #F5145D;
+        background-color: #fff;
+
+        &.active {
+            background-color: #F5145D;
+        }
+    }
+}
+

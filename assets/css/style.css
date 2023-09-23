@@ -101,6 +101,26 @@ body {
   color: #fff;
 }
 
+.progress-box .text {
+  bottom: 100%;
+  color: #fff;
+  font-family: "MuseoSans-regular";
+}
+.progress-box .text span.active {
+  color: #F5145D;
+}
+.progress-box .dot {
+  width: 15px;
+  height: 15px;
+  display: block;
+  border-radius: 50%;
+  border: 1px solid #F5145D;
+  background-color: #fff;
+}
+.progress-box .dot.active {
+  background-color: #F5145D;
+}
+
 #multi-step-form .section-heading .section-title {
   font-family: "MuseoSans-medium";
 }
@@ -173,6 +193,9 @@ body {
 }
 #multi-step-form .form-control.empty {
   color: #FFBFB4;
+}
+#multi-step-form .form-control.empty-gray {
+  color: #545454;
 }
 #multi-step-form input[type=date]:invalid::-webkit-datetime-edit {
   color: #545454;

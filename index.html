@@ -1,154 +1,172 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-    <title>multi-step-form</title>
-    <link
-      rel="shortcut icon"
-      href="assets/images/logo.png"
-      type="image/x-icon"
-    />
-    <link rel="stylesheet" href="assets/vendor/fontawesome/css/all.min.css" />
-    <link
-      rel="stylesheet"
-      href="assets/vendor/bootstrap/css/bootstrap.min.css"
-    />
-    <link rel="stylesheet" href="assets/css/style.css" />
-  </head>
-  <body>
-    <!-- === header section start === -->
-    <header></header>
-    <!-- ===//end of header section === -->
 
-    <!-- === form section start === -->
-    <section class="steps-form">
-      <div class="form-wrapper">
-        <form id="multi-step-form">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+  <title>multi-step-form</title>
+  <link rel="shortcut icon" href="assets/images/logo.png" type="image/x-icon" />
+  <link rel="stylesheet" href="assets/vendor/fontawesome/css/all.min.css" />
+  <link rel="stylesheet" href="assets/vendor/bootstrap/css/bootstrap.min.css" />
+  <link rel="stylesheet" href="assets/css/style.css" />
+</head>
 
-          <!-- Step 4 -->
-          <!-- <div class="step" data-step="4">
-            <div class="name py-5">
-              <div class="section-heading d-flex align-items-baseline mb-4">
-                <div class="flex-shrink-0 bg-purple ps-5 pe-4 py-3">
-                  <img src="assets/images/form/hand-dollar-white.png" alt="icon" class="img-fluid align-bottom">
+<body>
+  <!-- === form section start === -->
+  <section class="steps-form">
+    <div class="form-wrapper">
+      <form id="multi-step-form">
+        <!-- Step 1 -->
+        <div class="step" data-step="1">
+          <!-- progrees bar start -->
+          <div class="position-sticky top-0 p-4 pb-2 pt-md-5 pt-3 bg-black progress-box" style="z-index: 1000">
+            <div class="container">
+              <div class="position-relative m-4">
+                <div class="progress bg-purple" role="progressbar" aria-label="Progress" aria-valuenow="50"
+                  aria-valuemin="0" aria-valuemax="100" style="height: 2px; overflow: initial;">
+                  <div class="progress-bar"
+                    style="width: 0%; height: 22px;margin-left: 10px; position: absolute;bottom: 100%; background: url(./assets/images/form/frequency.png)">
+                  </div>
                 </div>
-                <h2 class="section-title line-height-0 text-uppercase">name</h2>
-                <span class="steps-number text-purple opacity-25 line-height-0">05</span>
+
+                <div
+                  class="text mb-3 position-absolute start-50 translate-middle d-md-flex d-none justify-content-between"
+                  style="width: calc(100% + 50px)">
+                  <span class="active">Personal</span>
+                  <span>Social Networks</span>
+                  <span>Documentation</span>
+                  <span>Client Type</span>
+                  <span class="ps-4" style="margin-right: -10px">Persona</span>
+                  <span style="margin-right: -20px">Investment Profile</span>
+                </div>
+
+                <div
+                  class="dot-box position-absolute top-0 start-50 translate-middle d-flex justify-content-between w-100">
+                  <span class="dot active"></span>
+                  <span class="dot"></span>
+                  <span class="dot"></span>
+                  <span class="dot"></span>
+                  <span class="dot"></span>
+                  <span class="dot" style="margin-right: -5px"></span>
+                </div>
               </div>
             </div>
-          </div> -->
-
-      
-
-          <!-- Step 1 -->
-          <div class="step" data-step="1">
-            <div class="personal">
-              <div class="container">
-                <div class="section-heading d-flex align-items-center justify-content-end">
-                  <h2 class="section-title">PERSONAL</h2>
-                  <span class="steps-number text-purple opacity-25">01</span>
-                </div>
-                <div class="row g-5 py-5">
-                  <div class="col-md-6">
-                    <div class="row flex-column gy-4">
-                      <div class="col-12">
-                        <label class="text-center profile-pic">
-                          <img
-                            src="assets/images/form/profile-pic.png"
-                            alt="profile-pic"
-                            class="img-fluid"
-                          />
-                          <input type="file" class="d-none" />
-                        </label>
-                      </div>
-                      <div class="col-12">
-                        <div class="d-flex">
-                          <div class="flex-shrink-0 me-2">
-                            <img  src="assets/images/form/en.png" alt="en" class="img-fluid" />
+          </div>
+          <!-- end of progress bar -->
+          <div class="personal">
+            <div class="container">
+              <div class="section-heading d-flex align-items-center justify-content-end">
+                <h2 class="section-title">PERSONAL</h2>
+                <span class="steps-number text-purple opacity-25">01</span>
+              </div>
+              <div class="row g-5 py-5">
+                <div class="col-md-6">
+                  <div class="row flex-column gy-4">
+                    <div class="col-12">
+                      <label class="text-center profile-pic">
+                        <img id="uploadedImage" src="assets/images/form/profile-pic.png" alt="profile-pic"
+                          class="img-fluid" style="max-height: 200px;" />
+                        <input id="fileInput" type="file" class="d-none" />
+                      </label>
+                    </div>
+                    <div class="col-12">
+                      <div class="d-flex">
+                        <div class="flex-shrink-0 me-2">
+                          <img src="assets/images/form/en.png" alt="en" class="img-fluid" />
+                        </div>
+                        <div>
+                          <label class="top-label text-white my-2">Do you speak English?</label>
+                          <br />
+                          <div class="form-check form-check-inline">
+                            <input class="form-check-input colored" name="speak-english" type="radio" />
+                            <label class="form-check-label text-white">No</label>
                           </div>
-                          <div>
-                            <label class="top-label text-white my-2">Do you speak English?</label>
-                            <br>
-                            <div class="form-check form-check-inline">
-                              <input class="form-check-input colored" name="speak-english" type="radio">
-                              <label class="form-check-label text-white">No</label>
-                            </div>
-                            <div class="form-check form-check-inline">
-                              <input class="form-check-input colored" name="speak-english" type="radio">
-                              <label class="form-check-label text-white">Fluent</label>
-                            </div>
-                            <div class="form-check form-check-inline">
-                              <input class="form-check-input colored" name="speak-english" type="radio">
-                              <label class="form-check-label text-white">Studying</label>
-                            </div>
+                          <div class="form-check form-check-inline">
+                            <input class="form-check-input colored" name="speak-english" type="radio" />
+                            <label class="form-check-label text-white">Fluent</label>
+                          </div>
+                          <div class="form-check form-check-inline">
+                            <input class="form-check-input colored" name="speak-english" type="radio" />
+                            <label class="form-check-label text-white">Studying</label>
                           </div>
                         </div>
                       </div>
-                      <div class="col-12">
-                        <div class="d-flex">
-                          <div class="flex-shrink-0 me-2">
-                            <img  src="assets/images/form/question-mark.png" alt="icon" class="img-fluid" />
+                    </div>
+                    <div class="col-12">
+                      <div class="d-flex">
+                        <div class="flex-shrink-0 me-2">
+                          <img src="assets/images/form/question-mark.png" alt="icon" class="img-fluid" />
+                        </div>
+                        <div>
+                          <label class="top-label text-white my-2">Did you know The Florida Lounge?</label>
+                          <br />
+                          <div class="form-check form-check-inline">
+                            <input class="form-check-input colored" name="florida-lounge" type="radio" />
+                            <label class="form-check-label text-white">Yes</label>
                           </div>
-                          <div>
-                            <label class="top-label text-white my-2">Did you know The Florida Lounge?</label>
-                            <br>
-                            <div class="form-check form-check-inline">
-                              <input class="form-check-input colored" name="florida-lounge" type="radio">
-                              <label class="form-check-label text-white">Yes</label>
-                            </div>
-                            <div class="form-check form-check-inline">
-                              <input class="form-check-input colored" name="florida-lounge" type="radio">
-                              <label class="form-check-label text-white">No</label>
-                            </div>
+                          <div class="form-check form-check-inline">
+                            <input class="form-check-input colored" name="florida-lounge" type="radio" />
+                            <label class="form-check-label text-white">No</label>
                           </div>
                         </div>
                       </div>
                     </div>
                   </div>
-                  <div class="col-md-6">
-                    <div class="row gy-4">
-                      <div class="col-12">
-                        <label class="top-label text-white text-uppercase">Name</label>
-                        <input type="text" class="form-control colored mb-2" placeholder="Enter Your Name">
-                      </div>
-                      <div class="col-12">
-                        <label class="top-label text-white text-uppercase">Last Name</label>
-                        <input type="text" class="form-control colored mb-2" placeholder="Enter Your Last Name">
-                      </div>
-                      <div class="col-12">
-                        <label class="top-label text-white text-uppercase">Birth</label>
-                        <input type="date" class="form-control colored mb-2 empty" id="date" placeholder="mm/dd/year">
-                      </div>
-                      <div class="col-12">
-                        <label class="top-label text-white text-uppercase">Status</label>
-                        <select class="form-select colored mb-2" required>
-                          <option value="" disabled selected>Open this select menu</option>
-                          <option value="1">One</option>
-                          <option value="2">Two</option>
-                          <option value="3">Three</option>
-                        </select>
-                      </div>
-                      <div class="col-12">
-                        <label class="top-label text-white text-uppercase">City</label>
-                        <select class="form-select colored" required>
-                          <option value="" disabled selected>Enter Your Current Location</option>
-                          <option value="1">One</option>
-                          <option value="2">Two</option>
-                          <option value="3">Three</option>
-                        </select>
-                      </div>
+                </div>
+                <div class="col-md-6">
+                  <div class="row gy-4">
+                    <div class="col-12">
+                      <label class="top-label text-white text-uppercase">Name</label>
+                      <input type="text" class="form-control colored mb-2" id="name" placeholder="Enter Your Name"
+                        required />
+                      <!-- add id to input field and same id with -error in error div to show required  -->
+                      <small id="name-error" class="text-white"></small>
+                    </div>
+                    <div class="col-12">
+                      <label class="top-label text-white text-uppercase">Last Name</label>
+                      <input type="text" class="form-control colored mb-2" id="lastName"
+                        placeholder="Enter Your Last Name" required />
+                      <!-- add id to input field and same id with -error in error div to show required  -->
+                      <small id="lastName-error" class="text-white"></small>
+                    </div>
+                    <div class="col-12">
+                      <label class="top-label text-white text-uppercase">Birth</label>
+                      <input type="date" class="form-control colored mb-2 empty" id="date" placeholder="mm/dd/year" />
+                    </div>
+                    <div class="col-12">
+                      <label class="top-label text-white text-uppercase">Status</label>
+                      <select class="form-select colored mb-2" name="status" id="status" required>
+                        <option value="" disabled selected>
+                          Open this select menu
+                        </option>
+                        <option value="1">One</option>
+                        <option value="2">Two</option>
+                        <option value="3">Three</option>
+                      </select>
+                      <span id="status-error" class="text-white"></span>
+                    </div>
+                    <div class="col-12">
+                      <label class="top-label text-white text-uppercase">City</label>
+                      <select class="form-select colored" name="city" id="city" required>
+                        <option value="" disabled selected>
+                          Enter Your Current Location
+                        </option>
+                        <option value="1">One</option>
+                        <option value="2">Two</option>
+                        <option value="3">Three</option>
+                      </select>
                     </div>
                   </div>
                 </div>
               </div>
-           </div>
-           <div class="career pt-4 pb-5">
+            </div>
+          </div>
+          <div class="career pt-4 pb-5">
             <div class="container pt-2">
               <div class="section-heading d-flex align-items-baseline border-bottom mb-5 px-4">
                 <div class="flex-shrink-0">
-                  <img src="assets/images/form/briefcase.png" alt="icon" class="img-fluid align-bottom">
+                  <img src="assets/images/form/briefcase.png" alt="icon" class="img-fluid align-bottom" />
                 </div>
                 <h2 class="section-title line-height-0">CAREER</h2>
                 <span class="steps-number text-purple opacity-25 line-height-0">02</span>
@@ -157,26 +175,26 @@
                 <div class="col-md-6">
                   <div class="d-flex align-items-center">
                     <div class="flex-shrink-0 me-2">
-                      <img src="assets/images/form/company.png" alt="icon" class="img-fluid">
+                      <img src="assets/images/form/company.png" alt="icon" class="img-fluid" />
                     </div>
                     <div class="flex-grow-1">
                       <label class="top-label">COMPANY</label>
-                      <input type="text" class="form-control" placeholder="Enter Your Currnt Company">
+                      <input type="text" class="form-control" placeholder="Enter Your Currnt Company" />
                     </div>
                   </div>
                   <div class="bg-lumber mt-2 p-3 rounded-4">
                     <label class="top-label mb-2" style="color: #545454">Company Type</label>
-                    <br>
+                    <br />
                     <div class="form-check form-check-inline">
-                      <input class="form-check-input" name="company-type" type="radio">
+                      <input class="form-check-input" name="company-type" type="radio" />
                       <label class="form-check-label">Public</label>
                     </div>
                     <div class="form-check form-check-inline">
-                      <input class="form-check-input" name="company-type" type="radio">
+                      <input class="form-check-input" name="company-type" type="radio" />
                       <label class="form-check-label">Private</label>
                     </div>
                     <div class="form-check form-check-inline">
-                      <input class="form-check-input" name="company-type" type="radio">
+                      <input class="form-check-input" name="company-type" type="radio" />
                       <label class="form-check-label">Third Sector</label>
                     </div>
                   </div>
@@ -186,22 +204,22 @@
                     <div class="col-12">
                       <div class="d-flex align-items-center">
                         <div class="flex-shrink-0 me-2">
-                          <img src="assets/images/form/line-of-business.png" alt="icon" class="img-fluid">
+                          <img src="assets/images/form/line-of-business.png" alt="icon" class="img-fluid" />
                         </div>
                         <div class="flex-grow-1">
                           <label class="top-label">LINE OF BUSINESS</label>
-                          <input type="text" class="form-control mb-2" placeholder="Company's Line of Business">
+                          <input type="text" class="form-control mb-2" placeholder="Company's Line of Business" />
                         </div>
                       </div>
                     </div>
                     <div class="col-12">
                       <div class="d-flex align-items-center">
                         <div class="flex-shrink-0 me-2">
-                          <img src="assets/images/form/position.png" alt="icon" class="img-fluid">
+                          <img src="assets/images/form/position.png" alt="icon" class="img-fluid" />
                         </div>
                         <div class="flex-grow-1">
                           <label class="top-label">POSITION</label>
-                          <input type="text" class="form-control mb-2" placeholder="Enter Your Position">
+                          <input type="text" class="form-control mb-2" placeholder="Enter Your Position" />
                         </div>
                       </div>
                     </div>
@@ -209,12 +227,12 @@
                 </div>
               </div>
             </div>
-           </div>
-           <div class="family pb-4">
+          </div>
+          <div class="family pb-4">
             <div class="container">
               <div class="section-heading d-flex align-items-baseline justify-content-end border-bottom mb-5 px-4">
                 <div class="flex-shrink-0">
-                  <img src="assets/images/form/family.png" alt="icon" class="img-fluid align-bottom">
+                  <img src="assets/images/form/family.png" alt="icon" class="img-fluid align-bottom" />
                 </div>
                 <h2 class="section-title line-height-0">FAMILY</h2>
                 <span class="steps-number text-purple opacity-25 line-height-0">03</span>
@@ -225,25 +243,25 @@
                     <div class="col-12">
                       <div class="d-flex">
                         <div class="flex-shrink-0 me-2">
-                          <img  src="assets/images/form/marital-status.png" alt="icon" class="img-fluid" />
+                          <img src="assets/images/form/marital-status.png" alt="icon" class="img-fluid" />
                         </div>
                         <div>
                           <label class="top-label my-2">MARITAL STATUS</label>
-                          <br>
+                          <br />
                           <div class="form-check form-check-inline">
-                            <input class="form-check-input" name="marital-status" type="radio">
+                            <input class="form-check-input" name="marital-status" type="radio" />
                             <label class="form-check-label">Single</label>
                           </div>
                           <div class="form-check form-check-inline">
-                            <input class="form-check-input" name="marital-status" type="radio">
+                            <input class="form-check-input" name="marital-status" type="radio" />
                             <label class="form-check-label">Married</label>
                           </div>
                           <div class="form-check form-check-inline">
-                            <input class="form-check-input" name="marital-status" type="radio">
+                            <input class="form-check-input" name="marital-status" type="radio" />
                             <label class="form-check-label">Windower</label>
                           </div>
                           <div class="form-check form-check-inline">
-                            <input class="form-check-input" name="marital-status" type="radio">
+                            <input class="form-check-input" name="marital-status" type="radio" />
                             <label class="form-check-label">Divorced</label>
                           </div>
                         </div>
@@ -252,37 +270,47 @@
                     <div class="col-12 mb-3">
                       <div class="d-flex align-items-center">
                         <div class="flex-shrink-0 me-3">
-                          <img src="assets/images/form/children.png" alt="icon" class="img-fluid">
+                          <img src="assets/images/form/children.png" alt="icon" class="img-fluid" />
                         </div>
                         <div class="flex-grow-1">
                           <label class="top-label">SPOUSE'S NAME</label>
-                          <input type="text" class="form-control" placeholder="wive's/Husband's Name">
+                          <input type="text" class="form-control" placeholder="wive's/Husband's Name" />
                         </div>
                       </div>
                     </div>
                     <div class="col-12">
                       <div class="d-flex">
                         <div class="flex-shrink-0 me-3">
-                          <img  src="assets/images/form/children.png" alt="icon" class="img-fluid" />
+                          <img src="assets/images/form/children.png" alt="icon" class="img-fluid" />
                         </div>
                         <div class="flex-grow-1">
                           <label class="top-label mb-2">DO YOU HAVE CHILDREN?</label>
-                          <br>
+                          <br />
                           <div class="form-check form-check-inline">
-                            <input class="form-check-input" name="children" type="radio">
+                            <input class="form-check-input" name="children" type="radio" />
                             <label class="form-check-label">Yes</label>
                           </div>
                           <div class="form-check form-check-inline">
-                            <input class="form-check-input" name="children" type="radio">
+                            <input class="form-check-input" name="children" type="radio" />
                             <label class="form-check-label">No</label>
                           </div>
 
                           <div class="pt-4">
                             <label class="top-label">NAME AND AGE OF YOUR CHILDREN</label>
-                            <input type="text" class="form-control" placeholder="Add one name and age">
-                            <ul class="ps-0 py-2" style="background-color: #F6F6F6;">
-                              <li class="d-flex align-items-center justify-content-between px-3"><span>Toney, 3</span> <button type="button" class="btn p-0 text-purple">x</button></li>
-                              <li class="d-flex align-items-center justify-content-between px-3"><span>Toney, 3</span> <button type="button" class="btn p-0 text-purple">x</button></li>
+                            <input type="text" class="form-control" placeholder="Add one name and age" />
+                            <ul class="ps-0 py-2" style="background-color: #f6f6f6">
+                              <li class="d-flex align-items-center justify-content-between px-3">
+                                <span>Toney, 3</span>
+                                <button type="button" class="btn p-0 text-purple">
+                                  x
+                                </button>
+                              </li>
+                              <li class="d-flex align-items-center justify-content-between px-3">
+                                <span>Toney, 3</span>
+                                <button type="button" class="btn p-0 text-purple">
+                                  x
+                                </button>
+                              </li>
                             </ul>
                           </div>
                         </div>
@@ -292,574 +320,677 @@
                 </div>
                 <div class="col-md-6">
                   <div class="bg-lumber p-4 rounded-4 position-relative mt-4">
-                    <img src="assets/images/form/cats.png" alt="pets" class="position-absolute end-0 img-fluid" style="bottom: calc(100% - 10px);">
+                    <img src="assets/images/form/cats.png" alt="pets" class="position-absolute end-0 img-fluid"
+                      style="bottom: calc(100% - 10px)" />
                     <div class="row gy-4">
-                        <div class="col-12">
-                          <label class="top-label mb-2">DO YOU HAVE PETS?</label>
-                          <br>
-                          <div class="form-check form-check-inline">
-                            <input class="form-check-input" name="pets" type="radio">
-                            <label class="form-check-label">Yes</label>
-                          </div>
-                          <div class="form-check form-check-inline">
-                            <input class="form-check-input" name="pets" type="radio">
-                            <label class="form-check-label">No</label>
-                          </div>
+                      <div class="col-12">
+                        <label class="top-label mb-2">DO YOU HAVE PETS?</label>
+                        <br />
+                        <div class="form-check form-check-inline">
+                          <input class="form-check-input" name="pets" type="radio" />
+                          <label class="form-check-label">Yes</label>
                         </div>
-                        <div class="col-12">
-                          <label class="top-label mb-2">GENRY</label>
-                          <br>
-                          <div class="form-check form-check-inline">
-                            <input class="form-check-input" type="checkbox">
-                            <label class="form-check-label">Feline</label>
-                          </div>
-                          <div class="form-check form-check-inline">
-                            <input class="form-check-input" type="checkbox">
-                            <label class="form-check-label">Canine</label>
-                          </div>
-                          <div class="form-check form-check-inline">
-                            <input class="form-check-input" type="checkbox">
-                            <label class="form-check-label">Reptile</label>
-                          </div>
-                          <div class="form-check form-check-inline">
-                            <input class="form-check-input" type="checkbox">
-                            <label class="form-check-label">Bird</label>
-                          </div>
-                          <div class="form-check form-check-inline">
-                            <input class="form-check-input" type="checkbox">
-                            <label class="form-check-label">Rodent</label>
-                          </div>
-                          <div class="form-check form-check-inline">
-                            <input class="form-check-input" type="checkbox">
-                            <label class="form-check-label">Others</label>
-                          </div>
+                        <div class="form-check form-check-inline">
+                          <input class="form-check-input" name="pets" type="radio" />
+                          <label class="form-check-label">No</label>
                         </div>
-                        
-                        <div class="col-12">
-                          <label class="top-label">NAME, BREED AND DESCRIPTION</label>
-                          <input type="text" class="form-control" placeholder="Add one pet, breed and description">
-                          <ul class="ps-0 py-2" style="background-color: #F6F6F6;">
-                            <li class="d-flex align-items-center justify-content-between px-3"><span>Dafney, Dalmatian, playful</span> <button type="button" class="btn p-0 text-purple">x</button></li>
-                            <li class="d-flex align-items-center justify-content-between px-3"><span>Potato, Siamese, codependent</span> <button type="button" class="btn p-0 text-purple">x</button></li>
-                          </ul>
+                      </div>
+                      <div class="col-12">
+                        <label class="top-label mb-2">GENRY</label>
+                        <br />
+                        <div class="form-check form-check-inline">
+                          <input class="form-check-input" type="checkbox" />
+                          <label class="form-check-label">Feline</label>
                         </div>
+                        <div class="form-check form-check-inline">
+                          <input class="form-check-input" type="checkbox" />
+                          <label class="form-check-label">Canine</label>
+                        </div>
+                        <div class="form-check form-check-inline">
+                          <input class="form-check-input" type="checkbox" />
+                          <label class="form-check-label">Reptile</label>
+                        </div>
+                        <div class="form-check form-check-inline">
+                          <input class="form-check-input" type="checkbox" />
+                          <label class="form-check-label">Bird</label>
+                        </div>
+                        <div class="form-check form-check-inline">
+                          <input class="form-check-input" type="checkbox" />
+                          <label class="form-check-label">Rodent</label>
+                        </div>
+                        <div class="form-check form-check-inline">
+                          <input class="form-check-input" type="checkbox" />
+                          <label class="form-check-label">Others</label>
+                        </div>
+                      </div>
+
+                      <div class="col-12">
+                        <label class="top-label">NAME, BREED AND DESCRIPTION</label>
+                        <input type="text" class="form-control" placeholder="Add one pet, breed and description" />
+                        <ul class="ps-0 py-2" style="background-color: #f6f6f6">
+                          <li class="d-flex align-items-center justify-content-between px-3">
+                            <span>Dafney, Dalmatian, playful</span>
+                            <button type="button" class="btn p-0 text-purple">
+                              x
+                            </button>
+                          </li>
+                          <li class="d-flex align-items-center justify-content-between px-3">
+                            <span>Potato, Siamese, codependent</span>
+                            <button type="button" class="btn p-0 text-purple">
+                              x
+                            </button>
+                          </li>
+                        </ul>
+                      </div>
                     </div>
                   </div>
                 </div>
               </div>
             </div>
-           </div>
-           <div class="container text-end  pb-5">
-            <button class="next-step btn btn-lg btn-purple px-4">Next</button>
-           </div>
           </div>
+          <div class="container text-end pb-5">
+            <button class="next-step btn btn-lg btn-purple px-4">Next</button>
+          </div>
+        </div>
 
-            <!-- Stpe 2 -->
-            <div class="step" data-step="2">
-              <div class="social py-5">
-                <div class="section-heading d-flex align-items-baseline mb-4">
-                  <div class="flex-shrink-0 bg-purple ps-5 pe-4 py-3">
-                    <img src="assets/images/form/share.png" alt="icon" class="img-fluid align-bottom">
+        <!-- Stpe 2 -->
+        <div class="step" data-step="2">
+          <!-- progrees bar start -->
+          <div class="position-sticky top-0 p-4 pb-2 pt-md-5 pt-3 bg-black progress-box" style="z-index: 1000">
+            <div class="container">
+              <div class="position-relative m-4">
+                <div class="progress bg-purple" role="progressbar" aria-label="Progress" aria-valuenow="50"
+                  aria-valuemin="0" aria-valuemax="100" style="height: 2px; overflow: hidden;">
+                  <div class="progress-bar"
+                    style="width: 20%; height: 22px;margin-left: 10px; position: absolute;bottom: 100%; background: url(./assets/images/form/frequency.png)">
                   </div>
-                  <h2 class="section-title line-height-0">SOCIAL</h2>
-                  <span class="steps-number text-purple opacity-25 line-height-0">04</span>
                 </div>
-                <div class="container">
+
+                <div
+                  class="text mb-3 position-absolute start-50 translate-middle d-md-flex d-none justify-content-between"
+                  style="width: calc(100% + 50px)">
+                  <span>Personal</span>
+                  <span class="active">Social Networks</span>
+                  <span>Documentation</span>
+                  <span>Client Type</span>
+                  <span class="ps-4" style="margin-right: -10px">Persona</span>
+                  <span style="margin-right: -20px">Investment Profile</span>
+                </div>
+
+                <div
+                  class="dot-box position-absolute top-0 start-50 translate-middle d-flex justify-content-between w-100">
+                  <span class="dot active"></span>
+                  <span class="dot active"></span>
+                  <span class="dot"></span>
+                  <span class="dot"></span>
+                  <span class="dot"></span>
+                  <span class="dot" style="margin-right: -5px"></span>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- end of progress bar -->
+          <div class="social py-5">
+            <div class="section-heading d-flex align-items-baseline mb-4">
+              <div class="flex-shrink-0 bg-purple ps-5 pe-4 py-3">
+                <img src="assets/images/form/share.png" alt="icon" class="img-fluid align-bottom" />
+              </div>
+              <h2 class="section-title line-height-0">SOCIAL</h2>
+              <span class="steps-number text-purple opacity-25 line-height-0">04</span>
+            </div>
+            <div class="container">
+              <div class="row gy-4">
+                <div class="col-12">
+                  <div class="d-flex align-items-center">
+                    <div class="flex-shrink-0 me-4">
+                      <img src="assets/images/form/social-icon/facebook.png" alt="social-icon" class="img-fluid" />
+                    </div>
+                    <div class="flex-grow-1">
+                      <input type="text" class="form-control" placeholder="Enter Social Network URL" />
+                    </div>
+                  </div>
+                </div>
+                <div class="col-12">
+                  <div class="d-flex align-items-center">
+                    <div class="flex-shrink-0 me-4">
+                      <img src="assets/images/form/social-icon/instagram.png" alt="social-icon" class="img-fluid" />
+                    </div>
+                    <div class="flex-grow-1">
+                      <input type="text" class="form-control" placeholder="Enter Social Network URL" />
+                    </div>
+                  </div>
+                </div>
+                <div class="col-12">
+                  <div class="d-flex align-items-center">
+                    <div class="flex-shrink-0 me-4">
+                      <img src="assets/images/form/social-icon/twit.png" alt="social-icon" class="img-fluid" />
+                    </div>
+                    <div class="flex-grow-1">
+                      <input type="text" class="form-control" placeholder="Enter Social Network URL" />
+                    </div>
+                  </div>
+                </div>
+                <div class="col-12">
+                  <div class="d-flex align-items-center">
+                    <div class="flex-shrink-0 me-4">
+                      <img src="assets/images/form/social-icon/tiktok.png" alt="social-icon" class="img-fluid" />
+                    </div>
+                    <div class="flex-grow-1">
+                      <input type="text" class="form-control" placeholder="Enter Social Network URL" />
+                    </div>
+                  </div>
+                </div>
+                <div class="col-12">
+                  <div class="d-flex align-items-center">
+                    <div class="flex-shrink-0 me-4">
+                      <img src="assets/images/form/social-icon/youtube.png" alt="social-icon" class="img-fluid" />
+                    </div>
+                    <div class="flex-grow-1">
+                      <input type="text" class="form-control" placeholder="Enter Social Network URL" />
+                    </div>
+                  </div>
+                </div>
+                <div class="col-12">
+                  <div class="d-flex align-items-center">
+                    <div class="flex-shrink-0 me-4">
+                      <img src="assets/images/form/social-icon/linkedIn.png" alt="social-icon" class="img-fluid" />
+                    </div>
+                    <div class="flex-grow-1">
+                      <input type="text" class="form-control" placeholder="Enter Social Network URL" />
+                    </div>
+                  </div>
+                </div>
+                <div class="col-12">
+                  <div class="d-flex align-items-center">
+                    <div class="flex-shrink-0 me-4">
+                      <img src="assets/images/form/social-icon/video.png" alt="social-icon" class="img-fluid" />
+                    </div>
+                    <div class="flex-grow-1">
+                      <input type="text" class="form-control" placeholder="Enter Social Network URL" />
+                    </div>
+                  </div>
+                </div>
+                <div class="col-12">
+                  <div class="d-flex align-items-center">
+                    <div class="flex-shrink-0 me-4">
+                      <img src="assets/images/form/social-icon/others.png" alt="social-icon" class="img-fluid" />
+                    </div>
+                    <div class="flex-grow-1">
+                      <input type="text" class="form-control" placeholder="Enter Social Network URL" />
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="container text-end pt-5">
+              <button class="prev-step btn btn-lg btn-outline-purple px-4 me-3">
+                Previous
+              </button>
+              <button class="next-step btn btn-lg btn-purple px-4">
+                Next
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Step 3 -->
+        <div class="step" data-step="3">
+          <!-- progrees bar start -->
+          <div class="position-sticky top-0 p-4 pb-2 pt-md-5 pt-3 bg-black progress-box" style="z-index: 1000">
+            <div class="container">
+              <div class="position-relative m-4">
+                <div class="progress bg-purple" role="progressbar" aria-label="Progress" aria-valuenow="50"
+                  aria-valuemin="0" aria-valuemax="100" style="height: 2px; overflow: hidden;">
+                  <div class="progress-bar"
+                    style="width: 40%; height: 22px;margin-left: 10px; position: absolute;bottom: 100%; background: url(./assets/images/form/frequency.png)">
+                  </div>
+                </div>
+
+                <div
+                  class="text mb-3 position-absolute start-50 translate-middle d-md-flex d-none justify-content-between"
+                  style="width: calc(100% + 50px)">
+                  <span>Personal</span>
+                  <span>Social Networks</span>
+                  <span class="active">Documentation</span>
+                  <span>Client Type</span>
+                  <span class="ps-4" style="margin-right: -10px">Persona</span>
+                  <span style="margin-right: -20px">Investment Profile</span>
+                </div>
+
+                <div
+                  class="dot-box position-absolute top-0 start-50 translate-middle d-flex justify-content-between w-100">
+                  <span class="dot active"></span>
+                  <span class="dot active"></span>
+                  <span class="dot active"></span>
+                  <span class="dot"></span>
+                  <span class="dot"></span>
+                  <span class="dot" style="margin-right: -5px"></span>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- end of progress bar -->
+          <div class="documentation py-5">
+            <div class="section-heading d-flex align-items-baseline mb-4">
+              <div class="flex-shrink-0 bg-purple ps-5 pe-4 py-3">
+                <img src="assets/images/form/hand-dollar-white.png" alt="icon" class="img-fluid align-bottom" />
+              </div>
+              <h2 class="section-title line-height-0 text-uppercase">
+                documentation
+              </h2>
+              <span class="steps-number text-purple opacity-25 line-height-0">05</span>
+            </div>
+            <div class="container">
+              <div class="row g-5">
+                <div class="col-md-6">
                   <div class="row gy-4">
                     <div class="col-12">
                       <div class="d-flex align-items-center">
-                        <div class="flex-shrink-0 me-4">
-                          <img src="assets/images/form/social-icon/facebook.png" alt="social-icon" class="img-fluid">
+                        <div class="icon flex-shrink-0 me-3 text-center">
+                          <img src="assets/images/form/price-range.png" alt="icon" class="img-fluid" />
                         </div>
                         <div class="flex-grow-1">
-                          <input type="text" class="form-control" placeholder="Enter Social Network URL">
+                          <label class="top-label text-uppercase">price range</label>
+                          <input type="text" class="form-control mb-2" placeholder="Enter Price Range" />
                         </div>
                       </div>
                     </div>
                     <div class="col-12">
                       <div class="d-flex align-items-center">
-                        <div class="flex-shrink-0 me-4">
-                          <img src="assets/images/form/social-icon/instagram.png" alt="social-icon" class="img-fluid">
+                        <div class="icon flex-shrink-0 me-4 text-center">
+                          <img src="assets/images/form/budget-invest.png" alt="icon" class="img-fluid" />
                         </div>
                         <div class="flex-grow-1">
-                          <input type="text" class="form-control" placeholder="Enter Social Network URL">
+                          <label class="top-label text-uppercase">Budget to invest</label>
+                          <input type="text" class="form-control mb-2" placeholder="Enter investment Budget" />
                         </div>
                       </div>
                     </div>
                     <div class="col-12">
-                      <div class="d-flex align-items-center">
-                        <div class="flex-shrink-0 me-4">
-                          <img src="assets/images/form/social-icon/twit.png" alt="social-icon" class="img-fluid">
+                      <div class="d-flex">
+                        <div class="icon flex-shrink-0 me-2 mt-2 text-center">
+                          <img src="assets/images/form/entry-budget.png" alt="icon" class="img-fluid" />
                         </div>
                         <div class="flex-grow-1">
-                          <input type="text" class="form-control" placeholder="Enter Social Network URL">
-                        </div>
-                      </div>
-                    </div>
-                    <div class="col-12">
-                      <div class="d-flex align-items-center">
-                        <div class="flex-shrink-0 me-4">
-                          <img src="assets/images/form/social-icon/tiktok.png" alt="social-icon" class="img-fluid">
-                        </div>
-                        <div class="flex-grow-1">
-                          <input type="text" class="form-control" placeholder="Enter Social Network URL">
-                        </div>
-                      </div>
-                    </div>
-                    <div class="col-12">
-                      <div class="d-flex align-items-center">
-                        <div class="flex-shrink-0 me-4">
-                          <img src="assets/images/form/social-icon/youtube.png" alt="social-icon" class="img-fluid">
-                        </div>
-                        <div class="flex-grow-1">
-                          <input type="text" class="form-control" placeholder="Enter Social Network URL">
-                        </div>
-                      </div>
-                    </div>
-                    <div class="col-12">
-                      <div class="d-flex align-items-center">
-                        <div class="flex-shrink-0 me-4">
-                          <img src="assets/images/form/social-icon/linkedIn.png" alt="social-icon" class="img-fluid">
-                        </div>
-                        <div class="flex-grow-1">
-                          <input type="text" class="form-control" placeholder="Enter Social Network URL">
-                        </div>
-                      </div>
-                    </div>
-                    <div class="col-12">
-                      <div class="d-flex align-items-center">
-                        <div class="flex-shrink-0 me-4">
-                          <img src="assets/images/form/social-icon/video.png" alt="social-icon" class="img-fluid">
-                        </div>
-                        <div class="flex-grow-1">
-                          <input type="text" class="form-control" placeholder="Enter Social Network URL">
-                        </div>
-                      </div>
-                    </div>
-                    <div class="col-12">
-                      <div class="d-flex align-items-center">
-                        <div class="flex-shrink-0 me-4">
-                          <img src="assets/images/form/social-icon/others.png" alt="social-icon" class="img-fluid">
-                        </div>
-                        <div class="flex-grow-1">
-                          <input type="text" class="form-control" placeholder="Enter Social Network URL">
+                          <label class="top-label text-uppercase">entry budget</label>
+                          <input type="text" class="form-control mb-5" placeholder="Enter Pre Pay Budget" />
+
+                          <div class="pt-4">
+                            <div class="row gy-4">
+                              <div class="col-12">
+                                <label class="top-label text-uppercase">country</label>
+                                <select class="form-select mb-2" name="country" id="country" required>
+                                  <option value="" disabled selected>
+                                    Enter Origin Investment
+                                  </option>
+                                  <option value="1">One</option>
+                                  <option value="2">Two</option>
+                                  <option value="3">Three</option>
+                                </select>
+                              </div>
+                              <div class="col-12">
+                                <label class="top-label text-uppercase">region</label>
+                                <select class="form-select mb-2" name="region" id="region" required>
+                                  <option value="" disabled selected>
+                                    Country
+                                  </option>
+                                  <option value="1">One</option>
+                                  <option value="2">Two</option>
+                                  <option value="3">Three</option>
+                                </select>
+                              </div>
+                              <div class="col-12">
+                                <label class="top-label text-uppercase">Condominium</label>
+                                <select class="form-select mb-2" name="condominium" id="condominium" required>
+                                  <option value="" disabled selected>
+                                    Subdivision
+                                  </option>
+                                  <option value="1">One</option>
+                                  <option value="2">Two</option>
+                                  <option value="3">Three</option>
+                                </select>
+                              </div>
+                              <div class="col-12">
+                                <label class="top-label text-uppercase">Home</label>
+                                <select class="form-select mb-2" name="home" id="home" required>
+                                  <option value="" disabled selected>
+                                    Real Estates
+                                  </option>
+                                  <option value="1">One</option>
+                                  <option value="2">Two</option>
+                                  <option value="3">Three</option>
+                                </select>
+                              </div>
+                            </div>
+                          </div>
                         </div>
                       </div>
                     </div>
                   </div>
                 </div>
-  
-                <div class="container text-end  pt-5">
-                  <button class="prev-step btn btn-lg btn-outline-purple px-4 me-3">Previous</button>
-                  <button class="next-step btn btn-lg btn-purple px-4">Next</button>
-                 </div>
+                <div class="col-md-6">
+                  <div class="row gy-4 mt-2 px-1 pb-4" style="
+                        border: 1px solid #f5145d;
+                        border-top-left-radius: 15px;
+                        border-bottom-left-radius: 15px;
+                      ">
+                    <div class="col-12">
+                      <div class="d-flex">
+                        <div class="flex-shrink-0 me-3 mt-2">
+                          <img src="assets/images/form/intend-to-make-payment.png" alt="icon" class="img-fluid" />
+                        </div>
+                        <div class="flex-grow-1">
+                          <label class="top-label my-2">How do you intend to make the payment?</label>
+                          <br />
+                          <div class="form-check form-check-inline">
+                            <input class="form-check-input" name="intend-to-make-payment" type="radio" />
+                            <label class="form-check-label">In cash</label>
+                          </div>
+                          <div class="form-check form-check-inline">
+                            <input class="form-check-input" name="intend-to-make-payment" type="radio" />
+                            <label class="form-check-label">Financed</label>
+                          </div>
+                          <div class="form-check form-check-inline">
+                            <input class="form-check-input" name="intend-to-make-payment" type="radio" />
+                            <label class="form-check-label">Fixed Assets</label>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="col-12">
+                      <div class="d-flex">
+                        <div class="flex-shrink-0 me-2 mt-2">
+                          <img src="assets/images/form/pre-approved-client.png" alt="icon" class="img-fluid" />
+                        </div>
+                        <div class="flex-grow-1">
+                          <label class="top-label my-2">Are you a Pre-Appoved Client?</label>
+                          <br />
+                          <div class="form-check form-check-inline">
+                            <input class="form-check-input" name="pre-approved-client" type="radio" />
+                            <label class="form-check-label">Yes</label>
+                          </div>
+                          <div class="form-check form-check-inline">
+                            <input class="form-check-input" name="pre-approved-client" type="radio" />
+                            <label class="form-check-label">No</label>
+                          </div>
+                          <div class="form-check form-check-inline">
+                            <input class="form-check-input" name="pre-approved-client" type="radio" />
+                            <label class="form-check-label">In Process</label>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="col-12">
+                      <div class="d-flex">
+                        <div class="flex-shrink-0 me-3 mt-2">
+                          <img src="assets/images/form/interested-in-consortum.png" alt="icon" class="img-fluid" />
+                        </div>
+                        <div class="flex-grow-1">
+                          <label class="top-label my-2">Interested in Consortum?</label>
+                          <br />
+                          <div class="form-check form-check-inline">
+                            <input class="form-check-input" name="interested-in-consortum" type="radio" />
+                            <label class="form-check-label">Yes</label>
+                          </div>
+                          <div class="form-check form-check-inline">
+                            <input class="form-check-input" name="interested-in-consortum" type="radio" />
+                            <label class="form-check-label">No</label>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="col-12">
+                      <div class="d-flex">
+                        <div class="flex-shrink-0 me-4 mt-2">
+                          <img src="assets/images/form/investment.png" alt="icon" class="img-fluid" />
+                        </div>
+                        <div class="flex-grow-1">
+                          <label class="top-label my-2">Do you already have an investment?</label>
+                          <br />
+                          <div class="form-check form-check-inline">
+                            <input class="form-check-input" name="have-investment" type="radio" />
+                            <label class="form-check-label">Yes</label>
+                          </div>
+                          <div class="form-check form-check-inline">
+                            <input class="form-check-input" name="have-investment" type="radio" />
+                            <label class="form-check-label">No</label>
+                          </div>
+
+                          <div class="mt-4">
+                            <label class="top-label mb-2">What kind?</label>
+                            <br />
+                            <div class="form-check form-check-inline">
+                              <input class="form-check-input" type="checkbox" />
+                              <label class="form-check-label">Properties</label>
+                            </div>
+                            <div class="form-check form-check-inline">
+                              <input class="form-check-input" type="checkbox" />
+                              <label class="form-check-label">Tesouro Directo</label>
+                            </div>
+                            <div class="form-check form-check-inline">
+                              <input class="form-check-input" type="checkbox" />
+                              <label class="form-check-label">CDB</label>
+                            </div>
+                            <div class="form-check form-check-inline">
+                              <input class="form-check-input" type="checkbox" />
+                              <label class="form-check-label">Investment Fund</label>
+                            </div>
+                            <div class="form-check form-check-inline">
+                              <input class="form-check-input" type="checkbox" />
+                              <label class="form-check-label">LCI and LCA</label>
+                            </div>
+                            <div class="form-check form-check-inline">
+                              <input class="form-check-input" type="checkbox" />
+                              <label class="form-check-label">Others</label>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
               </div>
             </div>
-
-                <!-- Step 3 -->
-          <div class="step" data-step="3">
-            <div class="documentation py-5">
-              <div class="section-heading d-flex align-items-baseline mb-4">
-                <div class="flex-shrink-0 bg-purple ps-5 pe-4 py-3">
-                  <img src="assets/images/form/hand-dollar-white.png" alt="icon" class="img-fluid align-bottom">
+            <div class="bg-purple py-5 position-relative mt-5">
+              <img src="assets/images/form/globe.png" alt="globe"
+                class="img-fluid position-absolute start-0 ps-4 d-xl-block d-none" style="bottom: calc(100% - 5px)" />
+              <div class="container">
+                <div class="row gy-4">
+                  <div class="col-md-8">
+                    <div class="d-flex">
+                      <div class="flex-shrink-0 me-md-4 me-3">
+                        <img src="assets/images/form/calander-white.png" alt="en" class="img-fluid" />
+                      </div>
+                      <div>
+                        <label class="top-label text-white my-2">PURCHASE FORECAST</label>
+                        <br />
+                        <div class="form-check form-check-inline">
+                          <input class="form-check-input colored" name="purchase-forecast" type="radio" />
+                          <label class="form-check-label text-white">1 Month</label>
+                        </div>
+                        <div class="form-check form-check-inline">
+                          <input class="form-check-input colored" name="purchase-forecast" type="radio" />
+                          <label class="form-check-label text-white">2-4 Months</label>
+                        </div>
+                        <div class="form-check form-check-inline">
+                          <input class="form-check-input colored" name="purchase-forecast" type="radio" />
+                          <label class="form-check-label text-white">5-12 Month</label>
+                        </div>
+                        <div class="form-check form-check-inline">
+                          <input class="form-check-input colored" name="purchase-forecast" type="radio" />
+                          <label class="form-check-label text-white">1+ Year</label>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-md-4">
+                    <div class="d-flex align-items-center">
+                      <div class="icon flex-shrink-0 me-3 text-center">
+                        <img src="assets/images/form/budget-of-invest-white.png" alt="icon" class="img-fluid" />
+                      </div>
+                      <div class="flex-grow-1">
+                        <label class="top-label text-uppercase text-white">Budget to invest</label>
+                        <input type="text" class="form-control colored mb-2" placeholder="Enter investment Budget" />
+                      </div>
+                    </div>
+                  </div>
                 </div>
-                <h2 class="section-title line-height-0 text-uppercase">documentation</h2>
-                <span class="steps-number text-purple opacity-25 line-height-0">05</span>
               </div>
+            </div>
+            <div class="py-5">
               <div class="container">
                 <div class="row g-5">
                   <div class="col-md-6">
                     <div class="row gy-4">
                       <div class="col-12">
-                        <div class="d-flex align-items-center">
-                          <div class="icon flex-shrink-0 me-3 text-center">
-                            <img src="assets/images/form/price-range.png" alt="icon" class="img-fluid">
-                          </div>
-                          <div class="flex-grow-1">
-                            <label class="top-label text-uppercase">price range</label>
-                            <input type="text" class="form-control mb-2" placeholder="Enter Price Range">
-                          </div>
+                        <label class="top-label mb-2 text-uppercase">do you have a us account?</label>
+                        <br />
+                        <div class="form-check form-check-inline">
+                          <input class="form-check-input" name="us-account" type="radio" />
+                          <label class="form-check-label">Yes</label>
+                        </div>
+                        <div class="form-check form-check-inline">
+                          <input class="form-check-input" name="us-account" type="radio" />
+                          <label class="form-check-label">No</label>
                         </div>
                       </div>
                       <div class="col-12">
-                        <div class="d-flex align-items-center">
-                          <div class="icon flex-shrink-0 me-4 text-center">
-                            <img src="assets/images/form/budget-invest.png" alt="icon" class="img-fluid">
-                          </div>
-                          <div class="flex-grow-1">
-                            <label class="top-label text-uppercase">Budget to invest</label>
-                            <input type="text" class="form-control mb-2" placeholder="Enter investment Budget">
-                          </div>
-                        </div>
+                        <label class="top-label text-uppercase">bank</label>
+                        <br />
+                        <input type="text" class="form-control mb-2" placeholder="Enter Bank’s Name" />
                       </div>
                       <div class="col-12">
-                        <div class="d-flex">
-                          <div class="icon flex-shrink-0 me-2 mt-2 text-center">
-                            <img src="assets/images/form/entry-budget.png" alt="icon" class="img-fluid">
-                          </div>
-                          <div class="flex-grow-1">
-                            <label class="top-label text-uppercase">entry budget</label>
-                            <input type="text" class="form-control mb-5" placeholder="Enter Pre Pay Budget">
-
-                            <div class="pt-4">
-                              <div class="row gy-4">
-                                <div class="col-12">
-                                  <label class="top-label text-uppercase">country</label>
-                                  <select class="form-select mb-2" required>
-                                    <option value="" disabled selected>Enter Origin Investment</option>
-                                    <option value="1">One</option>
-                                    <option value="2">Two</option>
-                                    <option value="3">Three</option>
-                                  </select>
-                                </div>
-                                <div class="col-12">
-                                  <label class="top-label text-uppercase">region</label>
-                                  <select class="form-select mb-2" required>
-                                    <option value="" disabled selected>Country</option>
-                                    <option value="1">One</option>
-                                    <option value="2">Two</option>
-                                    <option value="3">Three</option>
-                                  </select>
-                                </div>
-                                <div class="col-12">
-                                  <label class="top-label text-uppercase">Condominium</label>
-                                  <select class="form-select mb-2" required>
-                                    <option value="" disabled selected>Subdivision</option>
-                                    <option value="1">One</option>
-                                    <option value="2">Two</option>
-                                    <option value="3">Three</option>
-                                  </select>
-                                </div>
-                                <div class="col-12">
-                                  <label class="top-label text-uppercase">Home</label>
-                                  <select class="form-select mb-2" required>
-                                    <option value="" disabled selected>Real Estates</option>
-                                    <option value="1">One</option>
-                                    <option value="2">Two</option>
-                                    <option value="3">Three</option>
-                                  </select>
-                                </div>
-                              </div>
-                            </div>
-                          </div>
+                        <label class="top-label mb-2 text-uppercase">do you have a remittance account?</label>
+                        <br />
+                        <div class="form-check form-check-inline">
+                          <input class="form-check-input" name="remittance-account" type="radio" />
+                          <label class="form-check-label">Yes</label>
+                        </div>
+                        <div class="form-check form-check-inline">
+                          <input class="form-check-input" name="remittance-account" type="radio" />
+                          <label class="form-check-label">No</label>
                         </div>
                       </div>
                     </div>
                   </div>
                   <div class="col-md-6">
-                    <div class="row gy-4 mt-2 px-1 pb-4" style="border: 1px solid #F5145D; border-top-left-radius: 15px; border-bottom-left-radius: 15px;">
+                    <div class="row gy-4">
                       <div class="col-12">
-                        <div class="d-flex">
-                          <div class="flex-shrink-0 me-3 mt-2">
-                            <img  src="assets/images/form/intend-to-make-payment.png" alt="icon" class="img-fluid" />
-                          </div>
-                          <div class="flex-grow-1">
-                            <label class="top-label my-2">How do you intend to make the payment?</label>
-                            <br>
-                            <div class="form-check form-check-inline">
-                              <input class="form-check-input" name="intend-to-make-payment" type="radio">
-                              <label class="form-check-label">In cash</label>
-                            </div>
-                            <div class="form-check form-check-inline">
-                              <input class="form-check-input" name="intend-to-make-payment" type="radio">
-                              <label class="form-check-label">Financed</label>
-                            </div>
-                            <div class="form-check form-check-inline">
-                              <input class="form-check-input" name="intend-to-make-payment" type="radio">
-                              <label class="form-check-label">Fixed Assets</label>
-                            </div>
-                          </div>
-                        </div>
+                        <label class="top-label text-uppercase">bank</label>
+                        <br />
+                        <input type="text" class="form-control mb-2" placeholder="Enter Bank’s Name" />
                       </div>
                       <div class="col-12">
-                        <div class="d-flex">
-                          <div class="flex-shrink-0 me-2 mt-2">
-                            <img  src="assets/images/form/pre-approved-client.png" alt="icon" class="img-fluid" />
-                          </div>
-                          <div class="flex-grow-1">
-                            <label class="top-label my-2">Are you a Pre-Appoved Client?</label>
-                            <br>
-                            <div class="form-check form-check-inline">
-                              <input class="form-check-input" name="pre-approved-client" type="radio">
-                              <label class="form-check-label">Yes</label>
-                            </div>
-                            <div class="form-check form-check-inline">
-                              <input class="form-check-input" name="pre-approved-client" type="radio">
-                              <label class="form-check-label">No</label>
-                            </div>
-                            <div class="form-check form-check-inline">
-                              <input class="form-check-input" name="pre-approved-client" type="radio">
-                              <label class="form-check-label">In Process</label>
-                            </div>
-                          </div>
-                        </div>
+                        <label class="top-label text-uppercase">limit</label>
+                        <br />
+                        <input type="text" class="form-control" placeholder="Enter Account’s Limit" />
                       </div>
-                      <div class="col-12">
-                        <div class="d-flex">
-                          <div class="flex-shrink-0 me-3 mt-2">
-                            <img  src="assets/images/form/interested-in-consortum.png" alt="icon" class="img-fluid" />
-                          </div>
-                          <div class="flex-grow-1">
-                            <label class="top-label my-2">Interested in Consortum?</label>
-                            <br>
-                            <div class="form-check form-check-inline">
-                              <input class="form-check-input" name="interested-in-consortum" type="radio">
-                              <label class="form-check-label">Yes</label>
-                            </div>
-                            <div class="form-check form-check-inline">
-                              <input class="form-check-input" name="interested-in-consortum" type="radio">
-                              <label class="form-check-label">No</label>
-                            </div>
-                          </div>
-                        </div>
-                      </div>
-                      <div class="col-12">
-                        <div class="d-flex">
-                          <div class="flex-shrink-0 me-4 mt-2">
-                            <img  src="assets/images/form/investment.png" alt="icon" class="img-fluid" />
-                          </div>
-                          <div class="flex-grow-1">
-                            <label class="top-label my-2">Do you already have an investment?</label>
-                            <br>
-                            <div class="form-check form-check-inline">
-                              <input class="form-check-input" name="have-investment" type="radio">
-                              <label class="form-check-label">Yes</label>
-                            </div>
-                            <div class="form-check form-check-inline">
-                              <input class="form-check-input" name="have-investment" type="radio">
-                              <label class="form-check-label">No</label>
-                            </div>
+                    </div>
+                    <div class="text-end mt-4 d-lg-block d-none">
+                      <img src="assets/images/form/home.png" alt="home" style="max-width: 150px" />
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
 
-                            <div class="mt-4">
-                              <label class="top-label mb-2">What kind?</label>
-                              <br>
-                              <div class="form-check form-check-inline">
-                                <input class="form-check-input" type="checkbox">
-                                <label class="form-check-label">Properties</label>
-                              </div>
-                              <div class="form-check form-check-inline">
-                                <input class="form-check-input" type="checkbox">
-                                <label class="form-check-label">Tesouro Directo</label>
-                              </div>
-                              <div class="form-check form-check-inline">
-                                <input class="form-check-input" type="checkbox">
-                                <label class="form-check-label">CDB</label>
-                              </div>
-                              <div class="form-check form-check-inline">
-                                <input class="form-check-input" type="checkbox">
-                                <label class="form-check-label">Investment Fund</label>
-                              </div>
-                              <div class="form-check form-check-inline">
-                                <input class="form-check-input" type="checkbox">
-                                <label class="form-check-label">LCI and LCA</label>
-                              </div>
-                              <div class="form-check form-check-inline">
-                                <input class="form-check-input" type="checkbox">
-                                <label class="form-check-label">Others</label>
-                              </div>
-                            </div>
-                          </div>
-                        </div>
-                        
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <div class="bg-purple py-5 position-relative mt-5">
-                <img src="assets/images/form/globe.png" alt="globe" class="img-fluid position-absolute start-0 ps-4 d-xl-block d-none" style="bottom: calc(100% - 5px);">
-                <div class="container">
-                  <div class="row gy-4">
-                    <div class="col-md-8">
-                      <div class="d-flex">
-                        <div class="flex-shrink-0 me-md-4 me-3">
-                          <img  src="assets/images/form/calander-white.png" alt="en" class="img-fluid" />
-                        </div>
-                        <div>
-                          <label class="top-label text-white my-2">PURCHASE FORECAST</label>
-                          <br>
-                          <div class="form-check form-check-inline">
-                            <input class="form-check-input colored" name="purchase-forecast" type="radio">
-                            <label class="form-check-label text-white">1 Month</label>
-                          </div>
-                          <div class="form-check form-check-inline">
-                            <input class="form-check-input colored" name="purchase-forecast" type="radio">
-                            <label class="form-check-label text-white">2-4 Months</label>
-                          </div>
-                          <div class="form-check form-check-inline">
-                            <input class="form-check-input colored" name="purchase-forecast" type="radio">
-                            <label class="form-check-label text-white">5-12 Month</label>
-                          </div>
-                          <div class="form-check form-check-inline">
-                            <input class="form-check-input colored" name="purchase-forecast" type="radio">
-                            <label class="form-check-label text-white">1+ Year</label>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                    <div class="col-md-4">
-                      <div class="d-flex align-items-center">
-                        <div class="icon flex-shrink-0 me-3 text-center">
-                          <img src="assets/images/form/budget-of-invest-white.png" alt="icon" class="img-fluid">
-                        </div>
-                        <div class="flex-grow-1">
-                          <label class="top-label text-uppercase text-white">Budget to invest</label>
-                          <input type="text" class="form-control colored mb-2" placeholder="Enter investment Budget">
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <div class="py-5">
-                <div class="container">
-                  <div class="row g-5">
-                    <div class="col-md-6">
-                      <div class="row gy-4">
-                        <div class="col-12">
-                          <label class="top-label mb-2 text-uppercase">do you have a us account?</label>
-                          <br>
-                          <div class="form-check form-check-inline">
-                            <input class="form-check-input" name="us-account" type="radio">
-                            <label class="form-check-label">Yes</label>
-                          </div>
-                          <div class="form-check form-check-inline">
-                            <input class="form-check-input" name="us-account" type="radio">
-                            <label class="form-check-label">No</label>
-                          </div>
-                        </div>
-                        <div class="col-12">
-                          <label class="top-label text-uppercase">bank</label>
-                          <br>
-                          <input type="text" class="form-control mb-2" placeholder="Enter Bank’s Name">
-                        </div>
-                        <div class="col-12">
-                          <label class="top-label mb-2 text-uppercase">do you have a remittance account?</label>
-                          <br>
-                          <div class="form-check form-check-inline">
-                            <input class="form-check-input" name="remittance-account" type="radio">
-                            <label class="form-check-label">Yes</label>
-                          </div>
-                          <div class="form-check form-check-inline">
-                            <input class="form-check-input" name="remittance-account" type="radio">
-                            <label class="form-check-label">No</label>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                    <div class="col-md-6">
-                      <div class="row gy-4">
-                        <div class="col-12">
-                          <label class="top-label text-uppercase">bank</label>
-                          <br>
-                          <input type="text" class="form-control mb-2" placeholder="Enter Bank’s Name">
-                        </div>
-                        <div class="col-12">
-                          <label class="top-label text-uppercase">limit</label>
-                          <br>
-                          <input type="text" class="form-control" placeholder="Enter Account’s Limit">
-                        </div>
-                      </div>
-                      <div class="text-end mt-4 d-lg-block d-none">
-                        <img src="assets/images/form/home.png" alt="home" style="max-width: 150px;" >
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-
-              <div class="container">
-                <div class="bg-purple p-4" style="border-radius: 20px;">
+            <div class="container">
+              <div class="bg-purple p-4" style="border-radius: 20px">
                 <div class="d-lg-flex align-items-center">
                   <div class="icon flex-shrink-0 me-4 d-lg-block d-none">
-                    <img src="assets/images/form/world-white.png" alt="icon" class="img-fluid">
+                    <img src="assets/images/form/world-white.png" alt="icon" class="img-fluid" />
                   </div>
                   <div class="flex-grow-1">
-                    <div class="row g-4 pb-3 mb-3 p" style="border-bottom: 1px dashed #fff;">
+                    <div class="row g-4 pb-3 mb-3 p" style="border-bottom: 1px dashed #fff">
                       <div class="col-md-5">
                         <label class="top-label text-white my-2 text-uppercase">do you have a visa?</label>
-                        <br>
+                        <br />
                         <div class="form-check form-check-inline">
-                          <input class="form-check-input colored" name="visa" type="radio">
+                          <input class="form-check-input colored" name="visa" type="radio" />
                           <label class="form-check-label text-white">Yes</label>
                         </div>
                         <div class="form-check form-check-inline">
-                          <input class="form-check-input colored" name="visa" type="radio">
+                          <input class="form-check-input colored" name="visa" type="radio" />
                           <label class="form-check-label text-white">No</label>
                         </div>
                       </div>
                       <div class="col-md-7">
                         <label class="top-label text-white my-2 text-uppercase">type of visa</label>
-                        <br>
+                        <br />
                         <div class="form-check form-check-inline">
-                          <input class="form-check-input colored" type="checkbox">
+                          <input class="form-check-input colored" type="checkbox" />
                           <label class="form-check-label text-white">Tourism</label>
                         </div>
                         <div class="form-check form-check-inline">
-                          <input class="form-check-input colored" type="checkbox">
+                          <input class="form-check-input colored" type="checkbox" />
                           <label class="form-check-label text-white">Professional (Non-immigrant)</label>
                         </div>
                         <div class="form-check form-check-inline">
-                          <input class="form-check-input colored" type="checkbox">
+                          <input class="form-check-input colored" type="checkbox" />
                           <label class="form-check-label text-white">Green Card</label>
                         </div>
                         <div class="form-check form-check-inline">
-                          <input class="form-check-input colored" type="checkbox">
+                          <input class="form-check-input colored" type="checkbox" />
                           <label class="form-check-label text-white">Others</label>
                         </div>
                       </div>
                     </div>
-                    <div class="row g-4 pb-3 mb-3" style="border-bottom: 1px dashed #fff;">
+                    <div class="row g-4 pb-3 mb-3" style="border-bottom: 1px dashed #fff">
                       <div class="col-md-6">
                         <label class="top-label text-white my-2 text-uppercase">interested in green card/EB5?</label>
-                        <br>
+                        <br />
                         <div class="form-check form-check-inline">
-                          <input class="form-check-input colored" name="green-card" type="radio">
+                          <input class="form-check-input colored" name="green-card" type="radio" />
                           <label class="form-check-label text-white">Yes</label>
                         </div>
                         <div class="form-check form-check-inline">
-                          <input class="form-check-input colored" name="green-card" type="radio">
+                          <input class="form-check-input colored" name="green-card" type="radio" />
                           <label class="form-check-label text-white">No</label>
                         </div>
                         <div class="form-check form-check-inline">
-                          <input class="form-check-input colored" name="green-card" type="radio">
+                          <input class="form-check-input colored" name="green-card" type="radio" />
                           <label class="form-check-label text-white">In process</label>
                         </div>
                       </div>
                       <div class="col-md-6">
                         <label class="top-label text-white my-2 text-uppercase">want help with your visa?</label>
-                        <br>
+                        <br />
                         <div class="form-check form-check-inline">
-                          <input class="form-check-input colored" name="help-with-your-visa" type="radio">
+                          <input class="form-check-input colored" name="help-with-your-visa" type="radio" />
                           <label class="form-check-label text-white">Yes</label>
                         </div>
                         <div class="form-check form-check-inline">
-                          <input class="form-check-input colored" name="help-with-your-visa" type="radio">
+                          <input class="form-check-input colored" name="help-with-your-visa" type="radio" />
                           <label class="form-check-label text-white">No</label>
                         </div>
                       </div>
                     </div>
                     <div class="row g-4">
                       <div class="col-md-6">
-                        <label class="top-label text-white my-2 text-uppercase">do you have a foreign citizenship?</label>
-                        <br>
+                        <label class="top-label text-white my-2 text-uppercase">do you have a foreign
+                          citizenship?</label>
+                        <br />
                         <div class="form-check form-check-inline">
-                          <input class="form-check-input colored" name="foreign-citizenship" type="radio">
+                          <input class="form-check-input colored" name="foreign-citizenship" type="radio" />
                           <label class="form-check-label text-white">Yes</label>
                         </div>
                         <div class="form-check form-check-inline">
-                          <input class="form-check-input colored" name="foreign-citizenship" type="radio">
+                          <input class="form-check-input colored" name="foreign-citizenship" type="radio" />
                           <label class="form-check-label text-white">No</label>
                         </div>
                         <div class="form-check form-check-inline">
-                          <input class="form-check-input colored" name="foreign-citizenship" type="radio">
+                          <input class="form-check-input colored" name="foreign-citizenship" type="radio" />
                           <label class="form-check-label text-white">In process</label>
                         </div>
                       </div>
                       <div class="col-md-6">
                         <label class="top-label text-white text-uppercase">interested in green card/EB5?</label>
-                        <select class="form-select colored" required>
-                          <option value="" disabled selected>Enter Citizenship Type</option>
+                        <select class="form-select colored" name="interested-in-green-card"
+                          id="interested-in-green-card" required>
+                          <option value="" disabled selected>
+                            Enter Citizenship Type
+                          </option>
                           <option value="1">One</option>
                           <option value="2">Two</option>
                           <option value="3">Three</option>
@@ -868,89 +999,395 @@
                     </div>
                   </div>
                 </div>
+              </div>
+            </div>
+
+            <div class="container pt-5">
+              <div class="row gy-5 gx-0 px-lg-4">
+                <div class="col-md-5">
+                  <div class="row gy-4">
+                    <div class="col-12">
+                      <label class="top-label mb-2 text-uppercase">frequency you visit florida</label>
+                      <br />
+                      <div class="form-check form-check-inline">
+                        <input class="form-check-input" name="visit-florida" type="radio" />
+                        <label class="form-check-label">Never been</label>
+                      </div>
+                      <div class="form-check form-check-inline">
+                        <input class="form-check-input" name="visit-florida" type="radio" />
+                        <label class="form-check-label">Once a year</label>
+                      </div>
+                      <div class="form-check form-check-inline">
+                        <input class="form-check-input" name="visit-florida" type="radio" />
+                        <label class="form-check-label">Twice a year</label>
+                      </div>
+                      <div class="form-check form-check-inline">
+                        <input class="form-check-input" name="visit-florida" type="radio" />
+                        <label class="form-check-label">3+ times a year</label>
+                      </div>
+                    </div>
+
+                    <div class="col-12">
+                      <label class="top-label text-uppercase">Regions/Counties</label>
+                      <input type="text" class="form-control" placeholder="Add which Regions/Counties visited" />
+                      <ul class="ps-0 py-2" style="background-color: #f6f6f6">
+                        <li class="d-flex align-items-center justify-content-between px-3">
+                          <span>Palm Beach</span>
+                          <button type="button" class="btn p-0 text-purple">
+                            x
+                          </button>
+                        </li>
+                        <li class="d-flex align-items-center justify-content-between px-3">
+                          <span>Hamilton</span>
+                          <button type="button" class="btn p-0 text-purple">
+                            x
+                          </button>
+                        </li>
+                      </ul>
+                    </div>
+
+                    <div class="col-12">
+                      <label class="top-label mb-2 text-uppercase text-lg-nowrap">do you have friends or family in
+                        florida/usa?</label>
+                      <br />
+                      <div class="form-check form-check-inline">
+                        <input class="form-check-input" name="friends-or-family-in-florida-usa" type="radio" />
+                        <label class="form-check-label">Yes</label>
+                      </div>
+                      <div class="form-check form-check-inline">
+                        <input class="form-check-input" name="friends-or-family-in-florida-usa" type="radio" />
+                        <label class="form-check-label">No</label>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-md-7">
+                  <img src="assets/images/form/map.png" alt="map" class="img-fluid" />
                 </div>
               </div>
-
-              <div class="container pt-5">
-                <div class="row gy-5 gx-0 px-lg-4">
-                  <div class="col-md-5">
-                    <div class="row gy-4">
-                      <div class="col-12">
-                        <label class="top-label mb-2 text-uppercase">frequency you visit florida</label>
-                        <br>
-                        <div class="form-check form-check-inline">
-                          <input class="form-check-input" name="visit-florida" type="radio">
-                          <label class="form-check-label">Never been</label>
+              <div class="bg-purple w-100" style="height: 2px"></div>
+              <div class="d-md-flex py-5">
+                <div class="map flex-shrink-0 d-lg-block d-none me-4">
+                  <img src="assets/images/form/map-colored.png" alt="map" class="img-fluid" />
+                </div>
+                <div class="flex-grow-1">
+                  <div class="row gy-4">
+                    <div class="col-md-6">
+                      <label class="top-label mb-2 text-uppercase text-lg-nowrap">Have you ever lived in the us?</label>
+                      <br />
+                      <div class="form-check form-check-inline">
+                        <input class="form-check-input" name="ever-lived-in-usa" type="radio" />
+                        <label class="form-check-label">Yes</label>
+                      </div>
+                      <div class="form-check form-check-inline">
+                        <input class="form-check-input" name="ever-lived-in-usa" type="radio" />
+                        <label class="form-check-label">No</label>
+                      </div>
+                    </div>
+                    <div class="col-md-6">
+                      <div class="row gy-4">
+                        <div class="col-12">
+                          <label class="top-label text-uppercase">where?</label>
+                          <input type="text" class="form-control mb-2"
+                            placeholder="Enter the city you lived in the US" />
                         </div>
-                        <div class="form-check form-check-inline">
-                          <input class="form-check-input" name="visit-florida" type="radio">
-                          <label class="form-check-label">Once a year</label>
-                        </div>
-                        <div class="form-check form-check-inline">
-                          <input class="form-check-input" name="visit-florida" type="radio">
-                          <label class="form-check-label">Twice a year</label>
-                        </div>
-                        <div class="form-check form-check-inline">
-                          <input class="form-check-input" name="visit-florida" type="radio">
-                          <label class="form-check-label">3+ times a year</label>
+                        <div class="col-12">
+                          <label class="top-label text-uppercase">wheN?</label>
+                          <input type="text" class="form-control" placeholder="Enter the year you lived in the US" />
                         </div>
                       </div>
-                      
-                      <div class="col-12">
-                        <label class="top-label text-uppercase">Regions/Counties</label>
-                        <input type="text" class="form-control" placeholder="Add which Regions/Counties visited">
-                        <ul class="ps-0 py-2" style="background-color: #F6F6F6;">
-                          <li class="d-flex align-items-center justify-content-between px-3"><span>Palm Beach</span> <button type="button" class="btn p-0 text-purple">x</button></li>
-                          <li class="d-flex align-items-center justify-content-between px-3"><span>Hamilton</span> <button type="button" class="btn p-0 text-purple">x</button></li>
-                        </ul>
-                      </div>
-
-                      <div class="col-12">
-                        <label class="top-label mb-2 text-uppercase text-lg-nowrap">do you have friends or family in florida/usa?</label>
-                        <br>
-                        <div class="form-check form-check-inline">
-                          <input class="form-check-input" name="friends-or-family-in-florida-usa" type="radio">
-                          <label class="form-check-label">Yes</label>
-                        </div>
-                        <div class="form-check form-check-inline">
-                          <input class="form-check-input" name="friends-or-family-in-florida-usa" type="radio">
-                          <label class="form-check-label">No</label>
-                        </div>
-                      </div>
-                  </div>
-                  </div>
-                  <div class="col-md-7">
-                    <img src="assets/images/form/map.png" alt="map" class="img-fluid">
+                    </div>
                   </div>
                 </div>
-                <div class="bg-purple w-100" style="height: 2px;"></div>
-                <div class="d-md-flex py-5">
-                  <div class="map flex-shrink-0 d-lg-block d-none me-4">
-                    <img src="assets/images/form/map-colored.png" alt="map" class="img-fluid">
+              </div>
+            </div>
+
+            <div class="container text-end">
+              <button class="prev-step btn btn-lg btn-outline-purple px-4 me-3">
+                Previous
+              </button>
+              <button class="next-step btn btn-lg btn-purple px-4">
+                Next
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Step 4 -->
+        <div class="step" data-step="4">
+          <!-- progrees bar start -->
+          <div class="position-sticky top-0 p-4 pb-2 pt-md-5 pt-3 bg-black progress-box" style="z-index: 1000">
+            <div class="container">
+              <div class="position-relative m-4">
+                <div class="progress bg-purple" role="progressbar" aria-label="Progress" aria-valuenow="50"
+                  aria-valuemin="0" aria-valuemax="100" style="height: 2px; overflow: hidden;">
+                  <div class="progress-bar"
+                    style="width: 60%; height: 22px;margin-left: 10px; position: absolute;bottom: 100%; background: url(./assets/images/form/frequency.png)">
                   </div>
-                  <div class="flex-grow-1">
-                    <div class="row gy-4">
-                      <div class="col-md-6">
-                        <label class="top-label mb-2 text-uppercase text-lg-nowrap">Have you ever lived in the us?</label>
-                        <br>
-                        <div class="form-check form-check-inline">
-                          <input class="form-check-input" name="ever-lived-in-usa" type="radio">
-                          <label class="form-check-label">Yes</label>
+                </div>
+
+                <div
+                  class="text mb-3 position-absolute start-50 translate-middle d-md-flex d-none justify-content-between"
+                  style="width: calc(100% + 50px)">
+                  <span>Personal</span>
+                  <span>Social Networks</span>
+                  <span>Documentation</span>
+                  <span class="active">Client Type</span>
+                  <span class="ps-4" style="margin-right: -10px">Persona</span>
+                  <span style="margin-right: -20px">Investment Profile</span>
+                </div>
+
+                <div
+                  class="dot-box position-absolute top-0 start-50 translate-middle d-flex justify-content-between w-100">
+                  <span class="dot active"></span>
+                  <span class="dot active"></span>
+                  <span class="dot active"></span>
+                  <span class="dot active"></span>
+                  <span class="dot"></span>
+                  <span class="dot" style="margin-right: -5px"></span>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- end of progress bar -->
+          <div class="client-type py-5">
+            <div class="section-heading d-flex align-items-baseline mb-4">
+              <div class="flex-shrink-0 bg-purple ps-5 pe-4 py-3">
+                <img src="assets/images/form/hand-dollar-white.png" alt="icon" class="img-fluid align-bottom" />
+              </div>
+              <h2 class="section-title line-height-0 text-uppercase">
+                client type
+              </h2>
+              <span class="steps-number text-purple opacity-25 line-height-0">06</span>
+            </div>
+            <div class="container">
+              <div class="row gx-5 gy-4 align-items-lg-center">
+                <div class="col-md-6">
+                  <div class="row gy-4">
+                    <div class="col-12">
+                      <div class="d-flex align-items-center">
+                        <div class="icon flex-shrink-0 me-3">
+                          <img src="assets/images/form/thermometer.png" alt="thermometer" class="img-fluid" />
                         </div>
-                        <div class="form-check form-check-inline">
-                          <input class="form-check-input" name="ever-lived-in-usa" type="radio">
-                          <label class="form-check-label">No</label>
+                        <div class="flex-grow-1">
+                          <label class="top-label mb-2 text-uppercase">lead temperature</label>
+                          <br />
+                          <div class="form-check form-check-inline">
+                            <input class="form-check-input" name="lead-temperature" type="radio" />
+                            <label class="form-check-label">Hot</label>
+                          </div>
+                          <div class="form-check form-check-inline">
+                            <input class="form-check-input" name="lead-temperature" type="radio" />
+                            <label class="form-check-label">Warm</label>
+                          </div>
+                          <div class="form-check form-check-inline">
+                            <input class="form-check-input" name="lead-temperature" type="radio" />
+                            <label class="form-check-label">Cold</label>
+                          </div>
                         </div>
                       </div>
-                      <div class="col-md-6">
-                        <div class="row gy-4">
-                          <div class="col-12">
-                            <label class="top-label text-uppercase">where?</label>
-                            <input type="text" class="form-control mb-2" placeholder="Enter the city you lived in the US">
+                    </div>
+                  </div>
+                </div>
+                <div class="col-md-4">
+                  <label class="top-label mb-2 text-uppercase">customer's objections</label>
+                  <br />
+                  <div class="form-check form-check-inline">
+                    <input class="form-check-input" type="checkbox" />
+                    <label class="form-check-label">Dollar value</label>
+                  </div>
+                  <div class="form-check form-check-inline">
+                    <input class="form-check-input" type="checkbox" />
+                    <label class="form-check-label">Fees</label>
+                  </div>
+                  <div class="form-check form-check-inline">
+                    <input class="form-check-input" type="checkbox" />
+                    <label class="form-check-label">Financing</label>
+                  </div>
+                  <div class="form-check form-check-inline">
+                    <input class="form-check-input" type="checkbox" />
+                    <label class="form-check-label">Budget</label>
+                  </div>
+                </div>
+                <div class="col-12">
+                  <div class="line w-100 bg-purple" style="height: 2px"></div>
+                </div>
+                <div class="col-md-4">
+                  <div class="row gy-4">
+                    <div class="col-12">
+                      <div class="d-flex align-items-center">
+                        <div class="icon flex-shrink-0 me-3">
+                          <img src="assets/images/form/contact.png" alt="contact" class="img-fluid" />
+                        </div>
+                        <div class="flex-grow-1">
+                          <label class="top-label mb-2 text-uppercase">available for contact</label>
+                          <br />
+                          <div class="form-check form-check-inline">
+                            <input class="form-check-input" name="available-for-contact" type="radio" />
+                            <label class="form-check-label">Yes</label>
                           </div>
-                          <div class="col-12">
-                            <label class="top-label text-uppercase">wheN?</label>
-                            <input type="text" class="form-control" placeholder="Enter the year you lived in the US">
+                          <div class="form-check form-check-inline">
+                            <input class="form-check-input" name="available-for-contact" type="radio" />
+                            <label class="form-check-label">No</label>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-md-4">
+                  <label class="top-label mb-2 text-uppercase">available for contact</label>
+                  <br />
+                  <input type="date" class="form-control empty-gray" id="date2" />
+                </div>
+                <div class="col-md-4">
+                  <label class="top-label mb-2 text-uppercase">How to contact</label>
+                  <br />
+                  <div class="form-check form-check-inline">
+                    <input class="form-check-input" type="checkbox" />
+                    <label class="form-check-label">Email</label>
+                  </div>
+                  <div class="form-check form-check-inline">
+                    <input class="form-check-input" type="checkbox" />
+                    <label class="form-check-label">Call</label>
+                  </div>
+                  <div class="form-check form-check-inline">
+                    <input class="form-check-input" type="checkbox" />
+                    <label class="form-check-label">Message</label>
+                  </div>
+                  <div class="form-check form-check-inline">
+                    <input class="form-check-input" type="checkbox" />
+                    <label class="form-check-label">In person</label>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="container py-5">
+              <div class="bg-purple p-4" style="border-radius: 20px">
+                <div class="d-lg-flex align-items-center">
+                  <div class="icon flex-shrink-0 me-4 d-lg-block d-none">
+                    <img src="assets/images/form/client-hand-shake.png" alt="icon" class="img-fluid" />
+                  </div>
+                  <div class="flex-grow-1">
+                    <p class="text-white mb-5">
+                      DESCRIBE YOUR CUSTOMER TAKING INTO CONSIDERATION THE
+                      FOLLOWING SCALE: <br />
+                      1- NOT MUCH, 2-HEUTRAL, 3- VERY MUCH
+                    </p>
+                    <div class="row g-4 align-items-baseline">
+                      <div class="col-md-4 col-6 text-center">
+                        <img src="assets/images/form/pragmatic.png" alt="pragmatic" class="img-fluid align-bottom" />
+                        <div>
+                          <label class="top-label text-uppercase text-white mt-2 mb-1">pragmatic</label>
+                          <br />
+                          <div class="form-check form-check-inline">
+                            <input class="form-check-input colored" name="pragmatic" type="radio" />
+                            <label class="form-check-label text-white">1</label>
+                          </div>
+                          <div class="form-check form-check-inline">
+                            <input class="form-check-input colored" name="pragmatic" type="radio" />
+                            <label class="form-check-label text-white">2</label>
+                          </div>
+                          <div class="form-check form-check-inline me-0">
+                            <input class="form-check-input colored" name="pragmatic" type="radio" />
+                            <label class="form-check-label text-white">3</label>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="col-md-4 col-6 text-center">
+                        <img src="assets/images/form/analytical.png" alt="analytical" class="img-fluid align-bottom" />
+                        <div>
+                          <label class="top-label text-uppercase text-white mt-2 mb-1">analytical</label>
+                          <br />
+                          <div class="form-check form-check-inline">
+                            <input class="form-check-input colored" name="analytical" type="radio" />
+                            <label class="form-check-label text-white">1</label>
+                          </div>
+                          <div class="form-check form-check-inline">
+                            <input class="form-check-input colored" name="analytical" type="radio" />
+                            <label class="form-check-label text-white">2</label>
+                          </div>
+                          <div class="form-check form-check-inline me-0">
+                            <input class="form-check-input colored" name="analytical" type="radio" />
+                            <label class="form-check-label text-white">3</label>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="col-md-4 col-6 text-center">
+                        <img src="assets/images/form/affable.png" alt="affable" class="img-fluid align-bottom" />
+                        <div>
+                          <label class="top-label text-uppercase text-white mt-2 mb-1">affable</label>
+                          <br />
+                          <div class="form-check form-check-inline">
+                            <input class="form-check-input colored" name="affable" type="radio" />
+                            <label class="form-check-label text-white">1</label>
+                          </div>
+                          <div class="form-check form-check-inline">
+                            <input class="form-check-input colored" name="affable" type="radio" />
+                            <label class="form-check-label text-white">2</label>
+                          </div>
+                          <div class="form-check form-check-inline me-0">
+                            <input class="form-check-input colored" name="affable" type="radio" />
+                            <label class="form-check-label text-white">3</label>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="col-md-4 col-6 text-center">
+                        <img src="assets/images/form/expressive.png" alt="expressive" class="img-fluid align-bottom" />
+                        <div>
+                          <label class="top-label text-uppercase text-white mt-2 mb-1">expressive</label>
+                          <br />
+                          <div class="form-check form-check-inline">
+                            <input class="form-check-input colored" name="expressive" type="radio" />
+                            <label class="form-check-label text-white">1</label>
+                          </div>
+                          <div class="form-check form-check-inline">
+                            <input class="form-check-input colored" name="expressive" type="radio" />
+                            <label class="form-check-label text-white">2</label>
+                          </div>
+                          <div class="form-check form-check-inline me-0">
+                            <input class="form-check-input colored" name="expressive" type="radio" />
+                            <label class="form-check-label text-white">3</label>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="col-md-4 col-6 text-center">
+                        <img src="assets/images/form/know-it-all.png" alt="know-it-all"
+                          class="img-fluid align-bottom" />
+                        <div>
+                          <label class="top-label text-uppercase text-white mt-2 mb-1">know it all</label>
+                          <br />
+                          <div class="form-check form-check-inline">
+                            <input class="form-check-input colored" name="know-it-all" type="radio" />
+                            <label class="form-check-label text-white">1</label>
+                          </div>
+                          <div class="form-check form-check-inline">
+                            <input class="form-check-input colored" name="know-it-all" type="radio" />
+                            <label class="form-check-label text-white">2</label>
+                          </div>
+                          <div class="form-check form-check-inline me-0">
+                            <input class="form-check-input colored" name="know-it-all" type="radio" />
+                            <label class="form-check-label text-white">3</label>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="col-md-4 col-6 text-center">
+                        <img src="assets/images/form/decided.png" alt="decided" class="img-fluid align-bottom" />
+                        <div>
+                          <label class="top-label text-uppercase text-white mt-2 mb-1">decided</label>
+                          <br />
+                          <div class="form-check form-check-inline">
+                            <input class="form-check-input colored" name="decided" type="radio" />
+                            <label class="form-check-label text-white">1</label>
+                          </div>
+                          <div class="form-check form-check-inline">
+                            <input class="form-check-input colored" name="decided" type="radio" />
+                            <label class="form-check-label text-white">2</label>
+                          </div>
+                          <div class="form-check form-check-inline me-0">
+                            <input class="form-check-input colored" name="decided" type="radio" />
+                            <label class="form-check-label text-white">3</label>
                           </div>
                         </div>
                       </div>
@@ -958,59 +1395,398 @@
                   </div>
                 </div>
               </div>
+            </div>
 
-
-              <div class="container text-end">
-                <button class="prev-step btn btn-lg btn-outline-purple px-4 me-3">Previous</button>
-                <button class="next-step btn btn-lg btn-purple px-4">Next</button>
-                </div>
+            <div class="container text-end">
+              <button class="prev-step btn btn-lg btn-outline-purple px-4 me-3">
+                Previous
+              </button>
+              <button class="next-step btn btn-lg btn-purple px-4">
+                Next
+              </button>
             </div>
           </div>
-            
+        </div>
 
-   
+        <!-- Step 5 -->
+        <div class="step" data-step="5">
+          <!-- progrees bar start -->
+          <div class="position-sticky top-0 p-4 pb-2 pt-md-5 pt-3 bg-black progress-box" style="z-index: 1000">
+            <div class="container">
+              <div class="position-relative m-4">
+                <div class="progress bg-purple" role="progressbar" aria-label="Progress" aria-valuenow="50"
+                  aria-valuemin="0" aria-valuemax="100" style="height: 2px; overflow: hidden;">
+                  <div class="progress-bar"
+                    style="width: 80%; height: 22px;margin-left: 10px; position: absolute;bottom: 100%; background: url(./assets/images/form/frequency.png)">
+                  </div>
+                </div>
 
+                <div
+                  class="text mb-3 position-absolute start-50 translate-middle d-md-flex d-none justify-content-between"
+                  style="width: calc(100% + 50px)">
+                  <span>Personal</span>
+                  <span>Social Networks</span>
+                  <span>Documentation</span>
+                  <span>Client Type</span>
+                  <span class="ps-4 active" style="margin-right: -10px">Persona</span>
+                  <span style="margin-right: -20px">Investment Profile</span>
+                </div>
 
+                <div
+                  class="dot-box position-absolute top-0 start-50 translate-middle d-flex justify-content-between w-100">
+                  <span class="dot active"></span>
+                  <span class="dot active"></span>
+                  <span class="dot active"></span>
+                  <span class="dot active"></span>
+                  <span class="dot active"></span>
+                  <span class="dot" style="margin-right: -5px"></span>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- end of progress bar -->
+          <div class="persona py-5">
+            <div class="section-heading d-flex align-items-baseline mb-4">
+              <div class="flex-shrink-0 bg-purple ps-5 pe-4 py-3">
+                <img src="assets/images/form/hand-dollar-white.png" alt="icon" class="img-fluid align-bottom" />
+              </div>
+              <h2 class="section-title line-height-0 text-uppercase">
+                PERSONA
+              </h2>
+              <span class="steps-number text-purple opacity-25 line-height-0">07</span>
+            </div>
+            <div class="container">
+              <div class="d-flex px-md-4 mb-5">
+                <div class="icon flex-shrink-0 me-md-4 me-3 text-center" style="width: 60px">
+                  <img src="assets/images/form/investor.png" alt="thermometer" class="img-fluid" />
+                </div>
+                <div class="flex-grow-1">
+                  <label class="top-label mb-2 text-uppercase">Investor</label>
+                  <br />
+                  <div class="form-check form-check-inline mb-2">
+                    <input class="form-check-input" type="checkbox" />
+                    <label class="form-check-label">Multiproperties</label>
+                  </div>
+                  <div class="form-check form-check-inline mb-2">
+                    <input class="form-check-input" type="checkbox" />
+                    <label class="form-check-label">Construction</label>
+                  </div>
+                  <div class="form-check form-check-inline mb-2">
+                    <input class="form-check-input" type="checkbox" />
+                    <label class="form-check-label">Business</label>
+                  </div>
+                  <div class="form-check form-check-inline mb-2">
+                    <input class="form-check-input" type="checkbox" />
+                    <label class="form-check-label">Rural Property</label>
+                  </div>
+                  <div class="form-check form-check-inline mb-2">
+                    <input class="form-check-input" type="checkbox" />
+                    <label class="form-check-label">Real Estate</label>
+                  </div>
+                  <div class="form-check form-check-inline mb-2">
+                    <input class="form-check-input" type="checkbox" />
+                    <label class="form-check-label">Group Sale</label>
+                  </div>
+                  <div class="form-check form-check-inline mb-2">
+                    <input class="form-check-input" type="checkbox" />
+                    <label class="form-check-label">Multiples</label>
+                  </div>
+                  <div class="form-check form-check-inline">
+                    <input class="form-check-input" type="checkbox" />
+                    <label class="form-check-label">Commercial</label>
+                  </div>
+                </div>
+              </div>
+              <div class="d-flex px-md-4 mb-5">
+                <div class="icon flex-shrink-0 me-md-4 me-3 text-center" style="width: 60px">
+                  <img src="assets/images/form/immigrant.png" alt="thermometer" class="img-fluid" />
+                </div>
+                <div class="flex-grow-1">
+                  <label class="top-label mb-2 text-uppercase">immigrant</label>
+                  <br />
+                  <div class="form-check form-check-inline mb-2">
+                    <input class="form-check-input" type="checkbox" />
+                    <label class="form-check-label">Family</label>
+                  </div>
+                  <div class="form-check form-check-inline mb-2">
+                    <input class="form-check-input" type="checkbox" />
+                    <label class="form-check-label">Children Study</label>
+                  </div>
+                  <div class="form-check form-check-inline mb-2">
+                    <input class="form-check-input" type="checkbox" />
+                    <label class="form-check-label">Job/Investment</label>
+                  </div>
+                  <div class="form-check form-check-inline mb-2">
+                    <input class="form-check-input" type="checkbox" />
+                    <label class="form-check-label">New Perspectives</label>
+                  </div>
+                </div>
+              </div>
+              <div class="d-flex px-md-4">
+                <div class="icon flex-shrink-0 me-md-4 me-3 text-center" style="width: 60px">
+                  <img src="assets/images/form/partner.png" alt="thermometer" class="img-fluid" />
+                </div>
+                <div class="flex-grow-1">
+                  <label class="top-label mb-2 text-uppercase">partner</label>
+                  <br />
+                  <div class="form-check form-check-inline mb-2">
+                    <input class="form-check-input" type="checkbox" />
+                    <label class="form-check-label">Investor</label>
+                  </div>
+                  <div class="form-check form-check-inline mb-2">
+                    <input class="form-check-input" type="checkbox" />
+                    <label class="form-check-label">Financial</label>
+                  </div>
+                  <div class="form-check form-check-inline mb-2">
+                    <input class="form-check-input" type="checkbox" />
+                    <label class="form-check-label">Immigration</label>
+                  </div>
+                  <div class="form-check form-check-inline mb-2">
+                    <input class="form-check-input" type="checkbox" />
+                    <label class="form-check-label">Shipping</label>
+                  </div>
+                  <div class="form-check form-check-inline mb-2">
+                    <input class="form-check-input" type="checkbox" />
+                    <label class="form-check-label">Bank</label>
+                  </div>
+                  <div class="form-check form-check-inline mb-2">
+                    <input class="form-check-input" type="checkbox" />
+                    <label class="form-check-label">Seller</label>
+                  </div>
+                </div>
+              </div>
+            </div>
 
-         
+            <div class="container text-end pt-5">
+              <button class="prev-step btn btn-lg btn-outline-purple px-4 me-3">
+                Previous
+              </button>
+              <button class="next-step btn btn-lg btn-purple px-4">
+                Next
+              </button>
+            </div>
+          </div>
+        </div>
 
-          <!-- <h2>Step 1</h2>
-          <label for="name">Name:</label>
-          <input type="text" id="name" name="name" required />
-          <span class="error" id="name-error"></span>
-          <button class="next-step">Next</button> -->
+        <!-- Step 6 -->
+        <div class="step" data-step="6">
+          <!-- progrees bar start -->
+          <div class="position-sticky top-0 p-4 pb-2 pt-md-5 pt-3 bg-black progress-box" style="z-index: 1000">
+            <div class="container">
+              <div class="position-relative m-4">
+                <div class="progress bg-purple" role="progressbar" aria-label="Progress" aria-valuenow="50"
+                  aria-valuemin="0" aria-valuemax="100" style="height: 2px; overflow: hidden;">
+                  <div class="progress-bar"
+                    style="width: 98%; height: 22px;margin-left: 10px; position: absolute;bottom: 100%; background: url(./assets/images/form/frequency.png)">
+                  </div>
+                </div>
 
-          <!-- Step 2 -->
+                <div
+                  class="text mb-3 position-absolute start-50 translate-middle d-md-flex d-none justify-content-between"
+                  style="width: calc(100% + 50px)">
+                  <span>Personal</span>
+                  <span>Social Networks</span>
+                  <span>Documentation</span>
+                  <span>Client Type</span>
+                  <span class="ps-4" style="margin-right: -10px">Persona</span>
+                  <span class="active" style="margin-right: -20px">Investment Profile</span>
+                </div>
+
+                <div
+                  class="dot-box position-absolute top-0 start-50 translate-middle d-flex justify-content-between w-100">
+                  <span class="dot active"></span>
+                  <span class="dot active"></span>
+                  <span class="dot active"></span>
+                  <span class="dot active"></span>
+                  <span class="dot active"></span>
+                  <span class="dot active" style="margin-right: -5px"></span>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- end of progress bar -->
+          <div class="Investment-profile py-5">
+            <div class="section-heading d-flex align-items-baseline mb-4">
+              <div class="flex-shrink-0 bg-purple ps-5 pe-4 py-3">
+                <img src="assets/images/form/hand-dollar-white.png" alt="icon" class="img-fluid align-bottom" />
+              </div>
+              <h2 class="section-title line-height-0 text-uppercase">
+                Investment profile
+              </h2>
+              <span class="steps-number text-purple opacity-25 line-height-0">08</span>
+            </div>
+            <div class="container">
+              <div class="row gy-md-0 gy-4">
+                <div class="col-md-6 align-self-end">
+                  <img src="assets/images/form/home-tree.png" alt="home-tree" class="img-fluid" />
+                </div>
+                <div class="col-md-6">
+                  <div class="mb-4">
+                    <label class="top-label mb-2 text-uppercase">Property type</label>
+                    <br />
+                    <div class="form-check form-check-inline">
+                      <input class="form-check-input" name="property-type" type="radio" />
+                      <label class="form-check-label">Vacation</label>
+                    </div>
+                    <div class="form-check form-check-inline">
+                      <input class="form-check-input" name="property-type" type="radio" />
+                      <label class="form-check-label">Residential</label>
+                    </div>
+                    <div class="form-check form-check-inline">
+                      <input class="form-check-input" name="property-type" type="radio" />
+                      <label class="form-check-label">Flipping</label>
+                    </div>
+                    <div class="form-check form-check-inline">
+                      <input class="form-check-input" name="property-type" type="radio" />
+                      <label class="form-check-label">Land</label>
+                    </div>
+                  </div>
+                  <div class="mb-4">
+                    <label class="top-label mb-2 text-uppercase">State of Property</label>
+                    <br />
+                    <div class="form-check form-check-inline">
+                      <input class="form-check-input" name="state-of-property" type="radio" />
+                      <label class="form-check-label">New</label>
+                    </div>
+                    <div class="form-check form-check-inline">
+                      <input class="form-check-input" name="state-of-property" type="radio" />
+                      <label class="form-check-label">Second Hand</label>
+                    </div>
+                  </div>
+                  <div class="pb-lg-0 pb-md-4">
+                    <label class="top-label text-uppercase">House Type</label>
+                    <input type="text" class="form-control" placeholder="Enter House Type" />
+                  </div>
+                </div>
+              </div>
+              <div style="margin-top: -10px">
+                <div class="bg-lumber p-4 mt-md-0 mt-4">
+                  <div class="row gy-4">
+                    <div class="col-md-4">
+                      <label class="top-label text-uppercase">Size</label>
+                      <input type="text" class="form-control" placeholder="Enter size in sqft" />
+                    </div>
+                    <div class="col-md-4">
+                      <label class="top-label text-uppercase">rooms</label>
+                      <input type="text" class="form-control" placeholder="Enter number of rooms" />
+                    </div>
+                    <div class="col-md-4">
+                      <label class="top-label text-uppercase">Bathroom</label>
+                      <input type="text" class="form-control" placeholder="Enter number of bathroom" />
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="d-sm-flex align-items-md-center my-5">
+                <div class="flex-shrink-0 me-4 mb-sm-0 mb-4">
+                  <img src="assets/images/form/region.png" alt="region" class="img-fluid" />
+                </div>
+                <div class="flex-grow-1">
+                  <div class="row gy-4">
+                    <div class="col-md-4">
+                      <label class="top-label text-uppercase">Region of interest</label>
+                      <input type="text" class="form-control" placeholder="Enter Region of Interest" />
+                    </div>
+                    <div class="col-md-4">
+                      <label class="top-label text-uppercase">Condominium</label>
+                      <input type="text" class="form-control" placeholder="Enter Community" />
+                    </div>
+                    <div class="col-md-4">
+                      <label class="top-label text-uppercase">Age of Condominium</label>
+                      <input type="text" class="form-control" placeholder="Enter Community Age" />
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="d-sm-flex">
+                <div class="flex-shrink-0 px-4 mb-sm-0 mb-4">
+                  <img src="assets/images/form/building.png" alt="building" class="img-fluid" />
+                </div>
+                <div class="flex-grow-1">
+                  <div class="row gy-4">
+                    <div class="col-md-6">
+                      <label class="top-label mb-2 text-uppercase">Condominium type</label>
+                      <br />
+                      <div class="form-check form-check-inline mb-2">
+                        <input class="form-check-input" type="checkbox" />
+                        <label class="form-check-label">Vacation</label>
+                      </div>
+                      <div class="form-check form-check-inline mb-2">
+                        <input class="form-check-input" type="checkbox" />
+                        <label class="form-check-label">Residential</label>
+                      </div>
+                      <div class="form-check form-check-inline mb-2">
+                        <input class="form-check-input" type="checkbox" />
+                        <label class="form-check-label">Senior</label>
+                      </div>
+                    </div>
+                    <div class="col-md-6">
+                      <label class="top-label mb-2 text-uppercase">club</label>
+                      <br />
+                      <div class="form-check form-check-inline mb-2">
+                        <input class="form-check-input" name="club" type="radio" />
+                        <label class="form-check-label">Yes</label>
+                      </div>
+                      <div class="form-check form-check-inline mb-2">
+                        <input class="form-check-input" name="club" type="radio" />
+                        <label class="form-check-label">No</label>
+                      </div>
+                    </div>
+                    <div class="col-md-6">
+                      <label class="top-label mb-2 text-uppercase">House Phase</label>
+                      <br />
+                      <div class="form-check form-check-inline mb-2">
+                        <input class="form-check-input" name="house-phase" type="radio" />
+                        <label class="form-check-label">Under construction</label>
+                      </div>
+                      <div class="form-check form-check-inline mb-2">
+                        <input class="form-check-input" name="house-phase" type="radio" />
+                        <label class="form-check-label">Finished</label>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="container text-end pt-5">
+              <button class="prev-step btn btn-lg btn-outline-purple px-4 me-3">
+                Previous
+              </button>
+              <button type="submit" class="btn btn-lg btn-purple px-4">
+                Submit
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <!-- 
           <div class="step" data-step="2">
             <h2>Step 2</h2>
             <label for="email">Email:</label>
             <input type="email" id="email" name="email" required />
             <span class="error" id="email-error"></span>
-            <!-- Add other fields for Step 2 -->
             <button class="prev-step">Previous</button>
             <button class="next-step">Next</button>
           </div>
 
-          <!-- Step 3 -->
           <div class="step" data-step="3">
             <h2>Step 3</h2>
-            <!-- Add fields for Step 3 -->
             <input type="date" id="date-of-birth" required />
             <span class="error" id="date-of-birth-error"></span>
             <button class="prev-step">Previous</button>
             <button type="submit">Submit</button>
-          </div>
-        </form>
-      </div>
-    </section>
-    <!-- ===//end of form section === -->
+          </div> -->
+      </form>
+    </div>
+  </section>
+  <!-- ===//end of form section === -->
 
-    <!-- === footer section start === -->
-    <footer></footer>
-    <!-- ===//end of footer section === -->
+  <script src="assets/vendor/bootstrap/js/popper.js"></script>
+  <script src="assets/vendor/bootstrap/js/bootstrap.min.js"></script>
+  <script src="assets/js/custom.js"></script>
+</body>
 
-    <script src="assets/vendor/bootstrap/js/popper.js"></script>
-    <script src="assets/vendor/bootstrap/js/bootstrap.min.js"></script>
-    <script src="assets/js/custom.js"></script>
-  </body>
 </html>
