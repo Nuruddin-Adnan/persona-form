@@ -65,7 +65,7 @@ body {
 
 @media (min-width: 992px) {
   .container {
-    max-width: 800px;
+    max-width: 900px;
   }
 }
 
@@ -167,6 +167,7 @@ body {
   border-bottom: 1px solid #545454;
   border-radius: 0px;
   padding-left: 0px;
+  padding-bottom: 0px;
   color: #545454;
 }
 #multi-step-form .form-select:focus {
