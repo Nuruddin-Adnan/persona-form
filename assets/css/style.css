@@ -75,6 +75,26 @@ body {
 
 /*===// end of base css === */
 /*=== components css start === */
+.btn-purple {
+  background-color: #F5145D;
+  color: #fff;
+  border-color: #F5145D;
+}
+.btn-purple:hover {
+  background-color: #e60a51;
+  color: #fff;
+}
+
+.btn-outline-purple {
+  background-color: #fff;
+  color: #F5145D;
+  border-color: #F5145D;
+}
+.btn-outline-purple:hover {
+  background-color: #e60a51;
+  color: #fff;
+}
+
 #multi-step-form .section-heading .section-title {
   font-family: "MuseoSans-medium";
 }

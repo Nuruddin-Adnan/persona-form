@@ -1,0 +1,21 @@
+.btn-purple {
+    background-color: #F5145D;
+    color: #fff;
+    border-color: #F5145D;
+
+    &:hover {
+        background-color: darken(#F5145D, 5);
+        color: #fff;
+    }
+}
+
+.btn-outline-purple {
+    background-color: #fff;
+    color: #F5145D;
+    border-color: #F5145D;
+
+    &:hover {
+        background-color: darken(#F5145D, 5);
+        color: #fff;
+    }
+}
